@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./app.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <button class="menu-btn" aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="logo">
+                    <img src="./images/logo.jpg" alt="">
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="./index.html" class="active">Home</a></li>
+                        <li><a href="./catalog.html">Catalog</a></li>
+                        <li><a href="./special-offer.html">Special Offer</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                        <li><a href="./about.html">About</a></li>
+                    </ul>
+                </nav>
+                <div class="header-country">
+                    <div class="country-selector">
+                        <div class="selected-country">
+                            <img src="https://flagcdn.com/w20/gb.png" alt="GB" class="country-flag">
+                            <span class="country-name">United Kingdom</span>
+                            <span class="country-currency">GBP</span>
+                            <span class="dropdown-arrow">▼</span>
+                        </div>
+                        <ul class="country-dropdown">
+                            <li data-country="gb" data-currency="GBP">
+                                <img src="https://flagcdn.com/w20/gb.png" alt="GB">
+                                <span class="country-name">United Kingdom</span>
+                                <span class="country-currency">GBP</span>
+                            </li>
+                            <li data-country="de" data-currency="EUR">
+                                <img src="https://flagcdn.com/w20/de.png" alt="DE">
+                                <span class="country-name">Germany</span>
+                                <span class="country-currency">EUR</span>
+                            </li>
+                            <li data-country="fr" data-currency="EUR">
+                                <img src="https://flagcdn.com/w20/fr.png" alt="FR">
+                                <span class="country-name">France</span>
+                                <span class="country-currency">EUR</span>
+                            </li>
+                            <li data-country="it" data-currency="EUR">
+                                <img src="https://flagcdn.com/w20/it.png" alt="IT">
+                                <span class="country-name">Italy</span>
+                                <span class="country-currency">EUR</span>
+                            </li>
+                            <li data-country="es" data-currency="EUR">
+                                <img src="https://flagcdn.com/w20/es.png" alt="ES">
+                                <span class="country-name">Spain</span>
+                                <span class="country-currency">EUR</span>
+                            </li>
+                            <li data-country="nl" data-currency="EUR">
+                                <img src="https://flagcdn.com/w20/nl.png" alt="NL">
+                                <span class="country-name">Netherlands</span>
+                                <span class="country-currency">EUR</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <div class="header-search">
+                        <button class="search-trigger" aria-label="Open search">
+                            <img src="./images/icons/search.svg" alt="">
+                        </button>
+                    </div>
+                    <div class="search-modal">
+                        <div class="search-modal-inner">
+                            <div class="container">
+                                <form class="search-form" action="#" method="GET">
+                                    <input type="text" name="search" placeholder="Search..." autocomplete="off">
+                                    <button type="submit" aria-label="Search">
+                                        <img src="./images/icons/search.svg" alt="">
+                                    </button>
+                                </form>
+                                <button class="search-close" aria-label="Close search">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-cart">
+                        <a href="./cart.html" class="cart-trigger" aria-label="Open cart">
+                            <img src="./images/icons/cart.svg" alt="">
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- MAIN CONTENT -->
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="video-banner">
+                    <div class="video-container">
+                        <video autoplay muted loop playsinline>
+                            <source src="./video/video-banner.mp4" type="video/mp4">
+                            Your browser does not support video playback
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="gallery">
+            <div class="container">
+                <h2 class="section-title">Gallery</h2>
+                <!-- 1 left, 2 right -->
+                <div class="one-two-images">
+                    <div class="single-image">
+                        <img src="./images/gallery/gallery_01.jpg" alt="Image 1" />
+                    </div>
+                    <div class="two-images">
+                        <img src="./images/gallery/gallery_02.jpg" alt="Image 2" />
+                        <img src="./images/gallery/gallery_03.jpg" alt="Image 3" />
+                    </div>
+                </div>
+                <!-- 3 in row -->
+                <div class="row-images">
+                    <img src="./images/gallery/gallery_04.jpg" alt="Image 4" />
+                    <img src="./images/gallery/gallery_05.jpg" alt="Image 5" />
+                    <img src="./images/gallery/gallery_06.jpg" alt="Image 6" />
+                </div>
+                <!-- 2 left, 1 right -->
+                <div class="two-one-images">
+                    <div class="two-images">
+                        <img src="./images/gallery/gallery_07.jpg" alt="Image 7" />
+                        <img src="./images/gallery/gallery_08.jpg" alt="Image 8" />
+                    </div>
+                    <div class="single-image">
+                        <img src="./images/gallery/gallery_09.jpg" alt="Image 9" />
+                    </div>
+                </div>
+                <!-- 3 in row -->
+                <div class="row-images">
+                    <img src="./images/gallery/gallery_10.jpg" alt="Image 4" />
+                    <img src="./images/gallery/gallery_11.jpg" alt="Image 5" />
+                    <img src="./images/gallery/gallery_12.jpg" alt="Image 6" />
+                </div>
+                <!-- 1 left, 2 right -->
+                <div class="one-two-images">
+                    <div class="single-image">
+                        <img src="./images/gallery/gallery_13.jpg" alt="Image 1" />
+                    </div>
+                    <div class="two-images">
+                        <img src="./images/gallery/gallery_14.jpg" alt="Image 2" />
+                        <img src="./images/gallery/gallery_15.jpg" alt="Image 3" />
+                    </div>
+                </div>
+                <!-- 3 in row -->
+                <div class="row-images">
+                    <img src="./images/gallery/gallery_16.jpg" alt="Image 4" />
+                    <img src="./images/gallery/gallery_17.jpg" alt="Image 5" />
+                    <img src="./images/gallery/gallery_18.jpg" alt="Image 6" />
+                </div>
+            </div>
+        </section>
+        <section class="collections">
+            <div class="container">
+                <h2 class="section-title">Collections</h2>
+                <div class="collections-inner">
+                    <a href="" class="collection-item collection-geometry">
+                        <div class="collection-item-title">Geometry</div>
+                    </a>
+                    <a href="" class="collection-item collection-geometry-colors">
+                        <div class="collection-item-title">Coming Soon</div>
+                    </a>
+                    <a href="" class="collection-item collection-deluxe">
+                        <div class="collection-item-title">Coming Soon</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="offers">
+            <div class="container">
+                <h2 class="section-title">Offers</h2>
+                <div class="offers-inner">
+                    <div class="offers-grid">
+                        <div class="product-item">
+                            <p class="product-item-badge">Sale</p>
+                            <div class="product-image">
+                                <img src="./images/image-to-image.png" alt="Women's Top Product Image">
+                                <ul class="product-quick-links">
+                                    <li>
+                                        <button type="button" class="quick-link-btn" data-action="compare">
+                                            <img src="./images/icons/compare.svg" alt="Compare" class="quick-link-icon">
+                                            <span class="quick-link-tooltip">Compare</span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="quick-link-btn" data-action="quick-view">
+                                            <img src="./images/icons/search.svg" alt="Quick View" class="quick-link-icon">
+                                            <span class="quick-link-tooltip">Quick View</span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="quick-link-btn" data-action="wishlist">
+                                            <img src="./images/icons/heart.svg" alt="Add to Wishlist" class="quick-link-icon">
+                                            <span class="quick-link-tooltip">Add to Wishlist</span>
+                                        </button>
+                                    </li>
+                                </ul>
+                                <a href="#" class="click-to-more" data-content="click to more">
+                                    <span class="more-text">More Details</span>
+                                </a>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="product-title">
+                                    <a href="#">Women's Top</a>
+                                </h3>
+                                <div class="product-price">
+                                    <div class="product-compare-price">
+                                        <span class="product-currency">£</span>89.99
+                                    </div>
+                                    <div class="product-current-price">
+                                        <span class="product-currency">£</span>49.99
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <p class="product-item-badge">Sale</p>
+                            <div class="product-image">
+                                <img src="./images/image-to-image.png" alt="Women's Top Product Image">
+                                <ul class="product-quick-links">
+                                    <li>
+                                        <button type="button" class="quick-link-btn" data-action="compare">
+                                            <img src="./images/icons/compare.svg" alt="Compare" class="quick-link-icon">
+                                            <span class="quick-link-tooltip">Compare</span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="quick-link-btn" data-action="quick-view">
+                                            <img src="./images/icons/search.svg" alt="Quick View" class="quick-link-icon">
+                                            <span class="quick-link-tooltip">Quick View</span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="quick-link-btn" data-action="wishlist">
+                                            <img src="./images/icons/heart.svg" alt="Add to Wishlist" class="quick-link-icon">
+                                            <span class="quick-link-tooltip">Add to Wishlist</span>
+                                        </button>
+                                    </li>
+                                </ul>
+                                <a href="#" class="click-to-more" data-content="click to more">
+                                    <span class="more-text">More Details</span>
+                                </a>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="product-title">
+                                    <a href="#">Women's Top</a>
+                                </h3>
+                                <div class="product-price">
+                                    <div class="product-compare-price">
+                                        <span class="product-currency">£</span>89.99
+                                    </div>
+                                    <div class="product-current-price">
+                                        <span class="product-currency">£</span>49.99
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <p class="product-item-badge">Sale</p>
+                            <div class="product-image">
+                                <img src="./images/image-to-image.png" alt="Women's Top Product Image">
+                                <ul class="product-quick-links">
+                                    <li>
+                                        <button type="button" class="quick-link-btn" data-action="compare">
+                                            <img src="./images/icons/compare.svg" alt="Compare" class="quick-link-icon">
+                                            <span class="quick-link-tooltip">Compare</span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="quick-link-btn" data-action="quick-view">
+                                            <img src="./images/icons/search.svg" alt="Quick View" class="quick-link-icon">
+                                            <span class="quick-link-tooltip">Quick View</span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="quick-link-btn" data-action="wishlist">
+                                            <img src="./images/icons/heart.svg" alt="Add to Wishlist" class="quick-link-icon">
+                                            <span class="quick-link-tooltip">Add to Wishlist</span>
+                                        </button>
+                                    </li>
+                                </ul>
+                                <a href="#" class="click-to-more" data-content="click to more">
+                                    <span class="more-text">More Details</span>
+                                </a>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="product-title">
+                                    <a href="#">Women's Top</a>
+                                </h3>
+                                <div class="product-price">
+                                    <div class="product-compare-price">
+                                        <span class="product-currency">£</span>89.99
+                                    </div>
+                                    <div class="product-current-price">
+                                        <span class="product-currency">£</span>49.99
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <p class="product-item-badge">Sale</p>
+                            <div class="product-image">
+                                <img src="./images/image-to-image.png" alt="Women's Top Product Image">
+                                <ul class="product-quick-links">
+                                    <li>
+                                        <button type="button" class="quick-link-btn" data-action="compare">
+                                            <img src="./images/icons/compare.svg" alt="Compare" class="quick-link-icon">
+                                            <span class="quick-link-tooltip">Compare</span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="quick-link-btn" data-action="quick-view">
+                                            <img src="./images/icons/search.svg" alt="Quick View" class="quick-link-icon">
+                                            <span class="quick-link-tooltip">Quick View</span>
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="quick-link-btn" data-action="wishlist">
+                                            <img src="./images/icons/heart.svg" alt="Add to Wishlist" class="quick-link-icon">
+                                            <span class="quick-link-tooltip">Add to Wishlist</span>
+                                        </button>
+                                    </li>
+                                </ul>
+                                <a href="#" class="click-to-more" data-content="click to more">
+                                    <span class="more-text">More Details</span>
+                                </a>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="product-title">
+                                    <a href="#">Women's Top</a>
+                                </h3>
+                                <div class="product-price">
+                                    <div class="product-compare-price">
+                                        <span class="product-currency">£</span>89.99
+                                    </div>
+                                    <div class="product-current-price">
+                                        <span class="product-currency">£</span>49.99
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="./catalog.html" class="more-products">
+                        <span class="more-products-text">Discovery All Products</span>
+                        <img src="./images/icons/arrow-right.svg" alt="Arrow Right" class="more-products-icon">
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-top-inner">
+                    <p class="footer-top-title">Subscribe to our emails</p>
+                    <div class="footer-top-actions">
+                        <form class="footer-subscribe-form" action="#" method="POST">
+                            <input type="email" name="email" placeholder="Enter your email" required>
+                            <button type="submit" aria-label="Subscribe">
+                                <img src="./images/icons/arrow-right.svg" alt="Subscribe">
+                            </button>
+                        </form>
+                        <div class="footer-socials">
+                            <a href="#" class="social-link">
+                                <img src="./images/icons/facebook.svg" alt="Facebook">
+                            </a>
+                            <a href="#" class="social-link">
+                                <img src="./images/icons/instagram.svg" alt="Instagram">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-banners">
+                    <div class="footer-country">
+                        <div class="country-selector">
+                            <div class="selected-country">
+                                <img src="https://flagcdn.com/w20/gb.png" alt="GB" class="country-flag">
+                                <span class="country-name">United Kingdom</span>
+                                <span class="country-currency">GBP</span>
+                                <span class="dropdown-arrow">▼</span>
+                            </div>
+                            <ul class="country-dropdown">
+                                <li data-country="gb" data-currency="GBP">
+                                    <img src="https://flagcdn.com/w20/gb.png" alt="GB">
+                                    <span class="country-name">United Kingdom</span>
+                                    <span class="country-currency">GBP</span>
+                                </li>
+                                <li data-country="de" data-currency="EUR">
+                                    <img src="https://flagcdn.com/w20/de.png" alt="DE">
+                                    <span class="country-name">Germany</span>
+                                    <span class="country-currency">EUR</span>
+                                </li>
+                                <li data-country="fr" data-currency="EUR">
+                                    <img src="https://flagcdn.com/w20/fr.png" alt="FR">
+                                    <span class="country-name">France</span>
+                                    <span class="country-currency">EUR</span>
+                                </li>
+                                <li data-country="it" data-currency="EUR">
+                                    <img src="https://flagcdn.com/w20/it.png" alt="IT">
+                                    <span class="country-name">Italy</span>
+                                    <span class="country-currency">EUR</span>
+                                </li>
+                                <li data-country="es" data-currency="EUR">
+                                    <img src="https://flagcdn.com/w20/es.png" alt="ES">
+                                    <span class="country-name">Spain</span>
+                                    <span class="country-currency">EUR</span>
+                                </li>
+                                <li data-country="nl" data-currency="EUR">
+                                    <img src="https://flagcdn.com/w20/nl.png" alt="NL">
+                                    <span class="country-name">Netherlands</span>
+                                    <span class="country-currency">EUR</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-payments">
+                        <img src="./images/icons/visa.svg" alt="Visa">
+                        <img src="./images/icons/mastercard.svg" alt="MasterCard">
+                        <img src="./images/icons/paypal.svg" alt="PayPal">
+                        <img src="./images/icons/amex.svg" alt="American Express">
+                    </div>
+                </div>
+                <div class="footer-bottom-rights">
+                    <p>2024, Maxinspires</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Скрипты -->    
+    <script src="./js/modal.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

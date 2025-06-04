@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Complete Your Order</title>
+    <link rel="stylesheet" href="./app.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <button class="menu-btn" aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="logo">
+                    <img src="./images/logo.jpg" alt="">
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./catalog.html">Catalog</a></li>
+                        <li><a href="./special-offer.html">Special Offer</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                        <li><a href="./about.html">About</a></li>
+                    </ul>
+                </nav>
+                <div class="header-country">
+                    <div class="country-selector">
+                        <div class="selected-country">
+                            <img src="https://flagcdn.com/w20/gb.png" alt="GB" class="country-flag">
+                            <span class="country-name">United Kingdom</span>
+                            <span class="country-currency">GBP</span>
+                            <span class="dropdown-arrow">▼</span>
+                        </div>
+                        <ul class="country-dropdown">
+                            <li data-country="gb" data-currency="GBP">
+                                <img src="https://flagcdn.com/w20/gb.png" alt="GB">
+                                <span class="country-name">United Kingdom</span>
+                                <span class="country-currency">GBP</span>
+                            </li>
+                            <li data-country="de" data-currency="EUR">
+                                <img src="https://flagcdn.com/w20/de.png" alt="DE">
+                                <span class="country-name">Germany</span>
+                                <span class="country-currency">EUR</span>
+                            </li>
+                            <li data-country="fr" data-currency="EUR">
+                                <img src="https://flagcdn.com/w20/fr.png" alt="FR">
+                                <span class="country-name">France</span>
+                                <span class="country-currency">EUR</span>
+                            </li>
+                            <li data-country="it" data-currency="EUR">
+                                <img src="https://flagcdn.com/w20/it.png" alt="IT">
+                                <span class="country-name">Italy</span>
+                                <span class="country-currency">EUR</span>
+                            </li>
+                            <li data-country="es" data-currency="EUR">
+                                <img src="https://flagcdn.com/w20/es.png" alt="ES">
+                                <span class="country-name">Spain</span>
+                                <span class="country-currency">EUR</span>
+                            </li>
+                            <li data-country="nl" data-currency="EUR">
+                                <img src="https://flagcdn.com/w20/nl.png" alt="NL">
+                                <span class="country-name">Netherlands</span>
+                                <span class="country-currency">EUR</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="checkout-page">
+        <div class="container">
+            <div class="checkout-header">
+                <h1 class="checkout-title">Checkout</h1>
+                <div class="checkout-progress">
+                    <div class="progress-step active">
+                        <span class="step-number">1</span>
+                        <span class="step-name">Customer info</span>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step">
+                        <span class="step-number">2</span>
+                        <span class="step-name">Shipping</span>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step">
+                        <span class="step-number">3</span>
+                        <span class="step-name">Payment</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="checkout-content">
+                <div class="checkout-main">
+                    <!-- CUSTOMER INFORMATION FORM -->
+                    <div class="checkout-section" id="customer-info">
+                        <h2 class="section-title">Customer information</h2>
+                        <form class="checkout-form">
+                            <div class="form-group">
+                                <label for="email">Email address</label>
+                                <input type="email" id="email" placeholder="example@email.com" required>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first-name">First name</label>
+                                    <input type="text" id="first-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name">Last name</label>
+                                    <input type="text" id="last-name" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <input type="text" id="address" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="apartment">Apartment, suite, etc. (optional)</label>
+                                <input type="text" id="apartment">
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">City</label>
+                                    <input type="text" id="city" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="postal-code">Postal code</label>
+                                    <input type="text" id="postal-code" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="country">Country</label>
+                                <select id="country" required>
+                                    <option value="">Select country</option>
+                                    <option value="GB">United Kingdom</option>
+                                    <option value="DE">Germany</option>
+                                    <option value="FR">France</option>
+                                    <option value="IT">Italy</option>
+                                    <option value="ES">Spain</option>
+                                    <option value="NL">Netherlands</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" placeholder="For delivery questions" required>
+                            </div>
+
+                            <div class="form-group checkbox">
+                                <input type="checkbox" id="save-info" checked>
+                                <label for="save-info">Save this information for next time</label>
+                            </div>
+
+                            <div class="form-group checkbox">
+                                <input type="checkbox" id="newsletter">
+                                <label for="newsletter">Subscribe to our newsletter</label>
+                            </div>
+
+                            <div class="form-actions">
+                                <a href="./cart.html" class="back-link">← Return to cart</a>
+                                <button type="submit" class="continue-button">Continue to shipping</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- SHIPPING METHOD -->
+                    <div class="checkout-section hidden" id="shipping-method">
+                        <h2 class="section-title">Shipping method</h2>
+                        <div class="shipping-options">
+                            <div class="shipping-option">
+                                <input type="radio" name="shipping" id="standard" checked>
+                                <label for="standard">
+                                    <div class="option-details">
+                                        <span class="option-name">Standard shipping</span>
+                                        <span class="option-description">3-5 business days</span>
+                                    </div>
+                                    <span class="option-price">Free</span>
+                                </label>
+                            </div>
+
+                            <div class="shipping-option">
+                                <input type="radio" name="shipping" id="express">
+                                <label for="express">
+                                    <div class="option-details">
+                                        <span class="option-name">Express shipping</span>
+                                        <span class="option-description">1-2 business days</span>
+                                    </div>
+                                    <span class="option-price">$12.00</span>
+                                </label>
+                            </div>
+
+                            <div class="shipping-option">
+                                <input type="radio" name="shipping" id="next-day">
+                                <label for="next-day">
+                                    <div class="option-details">
+                                        <span class="option-name">Next day delivery</span>
+                                        <span class="option-description">Order before 2pm</span>
+                                    </div>
+                                    <span class="option-price">$25.00</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="back-button">← Back to customer info</button>
+                            <button type="button" class="continue-button">Continue to payment</button>
+                        </div>
+                    </div>
+
+                    <!-- PAYMENT METHOD -->
+                    <div class="checkout-section hidden" id="payment-method">
+                        <h2 class="section-title">Payment</h2>
+                        <p class="payment-security">All transactions are secure and encrypted</p>
+
+                        <div class="payment-methods">
+                            <div class="payment-method">
+                                <input type="radio" name="payment" id="credit-card" checked>
+                                <label for="credit-card">
+                                    <span>Credit card</span>
+                                    <div class="card-icons">
+                                        <img src="./images/icons/visa.svg" alt="Visa" class="card-icon">
+                                        <img src="./images/icons/mastercard.svg" alt="Mastercard" class="card-icon">
+                                        <img src="./images/icons/amex.svg" alt="American Express" class="card-icon">
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="credit-card-form payment-form active">
+                                <div class="form-group">
+                                    <label for="card-number">Card number</label>
+                                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="expiry">Expiration date (MM/YY)</label>
+                                        <input type="text" id="expiry" placeholder="MM/YY" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cvc">Security code</label>
+                                        <input type="text" id="cvc" placeholder="CVC" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="payment-method">
+                                <input type="radio" name="payment" id="paypal">
+                                <label for="paypal">
+                                    <span>PayPal</span>
+                                    <img src="./images/icons/paypal.svg" alt="PayPal" class="payment-icon">
+                                </label>
+                            </div>
+
+                            <div class="payment-method">
+                                <input type="radio" name="payment" id="apple-pay">
+                                <label for="apple-pay">
+                                    <span>Apple Pay</span>
+                                    <img src="./images/icons/apple-pay.svg" alt="Apple Pay" class="payment-icon">
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="billing-address">
+                            <h3 class="subsection-title">Billing address</h3>
+                            <div class="form-group radio">
+                                <input type="radio" name="billing-address" id="same-address" checked>
+                                <label for="same-address">Same as shipping address</label>
+                            </div>
+                            <div class="form-group radio">
+                                <input type="radio" name="billing-address" id="different-address">
+                                <label for="different-address">Use a different billing address</label>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="back-button">← Back to shipping</button>
+                            <button type="button" class="complete-order">Complete order</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checkout-sidebar">
+                    <div class="order-summary">
+                        <h2 class="summary-title">Order summary</h2>
+                        <div class="summary-items">
+                            <!-- Product in checkout -->
+                            <div class="summary-item">
+                                <div class="item-image">
+                                    <img src="images/products/01/product-01.jpg" alt="Product name">
+                                    <span class="item-quantity">1</span>
+                                </div>
+                                <div class="item-info">
+                                    <p class="item-name">Super puper mega landwirtschaftlich simulator 25</p>
+                                    <p class="item-variant">Size: M</p>
+                                </div>
+                                <p class="item-price">$19.99</p>
+                            </div>
+
+                            <div class="summary-item">
+                                <div class="item-image">
+                                    <img src="images/products/01/product-01.jpg" alt="Product name">
+                                    <span class="item-quantity">2</span>
+                                </div>
+                                <div class="item-info">
+                                    <p class="item-name">Gaming Mouse with RGB</p>
+                                    <p class="item-variant">Color: Black</p>
+                                </div>
+                                <p class="item-price">$39.98</p>
+                            </div>
+                        </div>
+
+                        <div class="discount-code">
+                            <div class="discount-form">
+                                <input type="text" placeholder="Discount code or gift card">
+                                <button type="button">Apply</button>
+                            </div>
+                        </div>
+
+                        <div class="summary-totals">
+                            <div class="summary-row">
+                                <span>Subtotal</span>
+                                <span>$59.97</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Shipping</span>
+                                <span>Free</span>
+                            </div>
+                            <div class="summary-row taxes">
+                                <span>Estimated taxes</span>
+                                <span>$5.99</span>
+                            </div>
+                            <div class="summary-total">
+                                <span>Total</span>
+                                <span class="total-price">$65.96</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checkout-trust">
+                        <h3 class="trust-title">Guaranteed safe & secure checkout</h3>
+                        <div class="trust-badges">
+                            <img src="./images/icons/visa.svg" alt="Visa" class="trust-badge">
+                            <img src="./images/icons/mastercard.svg" alt="Mastercard" class="trust-badge">
+                            <img src="./images/icons/amex.svg" alt="American Express" class="trust-badge">
+                            <img src="./images/icons/paypal.svg" alt="PayPal" class="trust-badge">
+                            <img src="./images/icons/apple-pay.svg" alt="Apple Pay" class="trust-badge">
+                        </div>
+                        <div class="trust-features">
+                            <div class="trust-feature">
+                                <img src="./images/icons/secure.svg" alt="" class="feature-icon">
+                                <p>100% Secure Payments</p>
+                            </div>
+                            <div class="trust-feature">
+                                <img src="./images/icons/shipping.svg" alt="" class="feature-icon">
+                                <p>Free Shipping Over $50</p>
+                            </div>
+                            <div class="trust-feature">
+                                <img src="./images/icons/return.svg" alt="" class="feature-icon">
+                                <p>30 Days Returns</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <h3 class="footer-heading">Customer Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Track Order</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-heading">About Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-heading">Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col subscribe-col">
+                    <h3 class="footer-heading">Join Our Newsletter</h3>
+                    <p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>
+                    <form class="subscribe-form">
+                        <div class="form-field">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">
+                            <img src="./images/icons/facebook.svg" alt="Facebook">
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <img src="./images/icons/instagram.svg" alt="Instagram">
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <img src="./images/icons/twitter.svg" alt="Twitter">
+                        </a>
+                        <a href="#" aria-label="Pinterest">
+                            <img src="./images/icons/pinterest.svg" alt="Pinterest">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">© 2023 Your Store. All rights reserved.</p>
+                <div class="payment-methods">
+                    <img src="./images/icons/visa.svg" alt="Visa">
+                    <img src="./images/icons/mastercard.svg" alt="Mastercard">
+                    <img src="./images/icons/amex.svg" alt="American Express">
+                    <img src="./images/icons/paypal.svg" alt="PayPal">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/checkout.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+@font-face {
+    font-family: 'Assistant Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Assistant Regular'), url('../fonts/Assistant-Regular.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Assistant ExtraLight';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Assistant ExtraLight'), url('../fonts/Assistant-ExtraLight.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Assistant Light';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Assistant Light'), url('../fonts/Assistant-Light.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Assistant SemiBold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Assistant SemiBold'), url('../fonts/Assistant-SemiBold.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Assistant Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Assistant Bold'), url('../fonts/Assistant-Bold.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Assistant ExtraBold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Assistant ExtraBold'), url('../fonts/Assistant-ExtraBold.woff') format('woff');
+    }

@@ -1,0 +1,27 @@
+/* Import main styles */
+@import url(./css/reset.css);
+@import url(./css/fonts.css);
+@import url(./css/base.css);
+
+
+/* Import component styles */
+
+/* Buttons styles */
+@import url(./css/buttons.css);
+/* Header styles */
+@import url(./css/header.css);
+/* Footer styles */
+@import url(./css/footer.css);
+
+
+/* Import pages styles */
+/* Home */
+@import url(./css/home.css);
+/* Catalog */
+@import url(./css/catalog.css);
+/* Product */
+@import url(./css/product.css);
+/* Product Page */
+@import url(./css/product-page.css);
+/* Cart */
+@import url(./css/cart.css);

@@ -1,0 +1,220 @@
+footer {
+    margin-top: 60px;
+    background-color: white;
+}
+
+.footer-top{
+    border-top: 1px solid var(--gray);
+    padding: 40px 0 20px;
+    margin-bottom: 20px;
+}
+
+.footer-top-title{
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    color: var(--text-color);
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-top-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+.footer-top-actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.footer-subscribe-form {
+    position: relative;
+    width: 350px;
+}
+
+.footer-subscribe-form input {
+    width: 100%;
+    padding: 15px 60px 15px 20px;
+    border: 2px solid var(--gray);
+    border-radius: 30px;
+    font-family: 'Assistant Regular';
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background-color: var(--light-gray);
+}
+
+.footer-subscribe-form input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(90, 103, 216, 0.15);
+    background-color: white;
+}
+
+.footer-subscribe-form button {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(90, 103, 216, 0.3);
+}
+
+.footer-subscribe-form button:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 4px 8px rgba(90, 103, 216, 0.4);
+}
+
+.footer-subscribe-form button img {
+    width: 16px;
+    height: 16px;
+    filter: brightness(0) invert(1);
+}
+
+.footer-socials {
+    display: flex;
+    gap: 20px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--light-gray);
+    box-shadow: var(--shadow);
+}
+
+.social-link:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.social-link img {
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover img {
+    filter: brightness(0) invert(1);
+}
+
+.footer-bottom{
+    border-top: 1px solid var(--gray);
+    padding-top: 20px;
+}
+
+.footer-bottom-banners{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.footer-payments{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-payments img {
+    width: 42px;
+    height: 26px;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    filter: grayscale(100%);
+}
+
+.footer-payments img:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+.footer-bottom-rights{
+    font-size: 14px;
+    margin: 0 auto 30px;
+    text-align: center;
+    color: var(--dark-gray);
+    position: relative;
+    padding-top: 20px;
+}
+
+.footer-bottom-rights::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 1px;
+    background: var(--gray);
+}
+
+
+
+@media (max-width: 768px) {
+    .footer-top {
+        padding: 30px 0 20px;
+    }
+
+    .footer-top-title {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .footer-subscribe-form {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 560px) {
+    .footer-top-actions{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
+
+    .footer-subscribe-form {
+        width: 100%;
+        max-width: none;
+    }
+
+    .footer-socials {
+        align-self: center;
+    }
+
+    .footer-bottom-banners{
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-bottom-rights {
+        margin-top: 10px;
+    }
+}

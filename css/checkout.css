@@ -1,0 +1,623 @@
+:root {
+    --primary-color: #5a67d8;
+    --secondary-color: #434190;
+    --light-gray: #f7fafc;
+    --gray: #e2e8f0;
+    --dark-gray: #4a5568;
+    --text-color: #2d3748;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
+    --radius: 12px;
+}
+
+/* Основные стили для страницы оформления заказа */
+.checkout-page {
+    padding: 60px 0;
+    background-color: var(--light-gray);
+    min-height: calc(100vh - 400px);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Заголовок страницы и прогресс-бар */
+.checkout-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.checkout-title {
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.checkout-progress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.progress-step.active .step-number {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.progress-step.active .step-name {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.step-number {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: var(--gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark-gray);
+    transition: all 0.3s ease;
+}
+
+.step-name {
+    font-size: 14px;
+    color: var(--dark-gray);
+}
+
+.progress-line {
+    flex-grow: 1;
+    height: 2px;
+    background-color: var(--gray);
+    margin: 0 15px;
+    position: relative;
+    top: -14px;
+}
+
+/* Основное содержимое страницы */
+.checkout-content {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* Формы */
+.checkout-section {
+    background-color: white;
+    border-radius: var(--radius);
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+    transition: opacity 0.3s ease;
+}
+
+.section-title {
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.subsection-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--gray);
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(90, 103, 216, 0.1);
+}
+
+input::placeholder {
+    color: #A0AEC0;
+}
+
+.form-group.checkbox,
+.form-group.radio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-group.checkbox label,
+.form-group.radio label {
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.form-group.checkbox input[type="checkbox"],
+.form-group.radio input[type="radio"] {
+    width: auto;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+/* Кнопки действий */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.back-link, .back-button {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.back-link:hover, .back-button:hover {
+    color: var(--primary-color);
+}
+
+.continue-button, .complete-order {
+    padding: 12px 25px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 4px rgba(90, 103, 216, 0.2);
+}
+
+.continue-button:hover, .complete-order:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(90, 103, 216, 0.3);
+}
+
+/* Способы доставки */
+.shipping-options {
+    margin-bottom: 25px;
+}
+
+.shipping-option {
+    margin-bottom: 15px;
+}
+
+.shipping-option input[type="radio"] {
+    display: none;
+}
+
+.shipping-option label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid var(--gray);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.shipping-option input[type="radio"]:checked + label {
+    border-color: var(--primary-color);
+    background-color: rgba(90, 103, 216, 0.05);
+}
+
+.option-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.option-name {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.option-description {
+    font-size: 14px;
+    color: var(--dark-gray);
+}
+
+.option-price {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* Способы оплаты */
+.payment-methods {
+    margin-bottom: 25px;
+}
+
+.payment-security {
+    font-size: 14px;
+    color: var(--dark-gray);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.payment-security::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background-image: url('../images/icons/secure.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.payment-method {
+    margin-bottom: 15px;
+}
+
+.payment-method input[type="radio"] {
+    display: none;
+}
+
+.payment-method label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid var(--gray);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.payment-method input[type="radio"]:checked + label {
+    border-color: var(--primary-color);
+    background-color: rgba(90, 103, 216, 0.05);
+}
+
+.card-icons, .payment-icon {
+    display: flex;
+    gap: 8px;
+}
+
+.card-icon {
+    height: 24px;
+}
+
+.payment-icon {
+    height: 28px;
+}
+
+.payment-form {
+    display: none;
+    padding: 20px;
+    background-color: #f9fafc;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.payment-form.active {
+    display: block;
+}
+
+/* Сайдбар с информацией о заказе */
+.checkout-sidebar {
+    position: sticky;
+    top: 20px;
+}
+
+.order-summary {
+    background-color: white;
+    border-radius: var(--radius);
+    padding: 30px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+}
+
+.summary-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    font-weight: 600;
+    border-bottom: 1px solid var(--gray);
+    padding-bottom: 15px;
+}
+
+.summary-items {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 5px;
+    margin-bottom: 20px;
+}
+
+.summary-items::-webkit-scrollbar {
+    width: 4px;
+}
+
+.summary-items::-webkit-scrollbar-track {
+    background: var(--light-gray);
+}
+
+.summary-items::-webkit-scrollbar-thumb {
+    background-color: var(--gray);
+    border-radius: 10px;
+}
+
+.summary-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--gray);
+}
+
+.summary-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.item-image {
+    position: relative;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.item-image img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid var(--gray);
+}
+
+.item-quantity {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--dark-gray);
+    color: white;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.item-info {
+    flex-grow: 1;
+}
+
+.item-name {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.item-variant {
+    font-size: 13px;
+    color: var(--dark-gray);
+}
+
+.item-price {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.discount-code {
+    margin-bottom: 20px;
+}
+
+.discount-form {
+    display: flex;
+    gap: 10px;
+}
+
+.discount-form input {
+    flex-grow: 1;
+}
+
+.discount-form button {
+    padding: 12px 20px;
+    background-color: var(--gray);
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    color: var(--text-color);
+}
+
+.discount-form button:hover {
+    background-color: #d1dce7;
+}
+
+.summary-totals {
+    padding-top: 20px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 15px;
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    margin-top: 15px;
+    border-top: 2px solid var(--gray);
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.total-price {
+    color: var(--primary-color);
+}
+
+.checkout-trust {
+    background-color: white;
+    border-radius: var(--radius);
+    padding: 25px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.trust-title {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.trust-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.trust-badge {
+    height: 24px;
+    opacity: 0.8;
+}
+
+.trust-features {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.trust-feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.feature-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.trust-feature p {
+    font-size: 14px;
+    color: var(--dark-gray);
+    font-weight: 500;
+}
+
+/* Адаптивные стили */
+@media (max-width: 1024px) {
+    .checkout-content {
+        grid-template-columns: 1fr;
+    }
+
+    .checkout-sidebar {
+        position: static;
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .checkout-title {
+        font-size: 28px;
+    }
+
+    .checkout-page {
+        padding: 40px 0;
+    }
+
+    .step-name {
+        display: none;
+    }
+
+    .checkout-section {
+        padding: 20px;
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .checkout-title {
+        font-size: 24px;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+        gap: 15px;
+    }
+
+    .back-link, .back-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .continue-button, .complete-order {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Состояния скрытых разделов */
+.hidden {
+    display: none;
+}

@@ -1,0 +1,14 @@
+# Служебные файлы операционной системы
+.DS_Store
+Thumbs.db
+
+# Зависимости и папки окружения
+node_modules/
+dist/
+.env
+
+# Файлы редакторов
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace

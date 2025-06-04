@@ -1,0 +1,27 @@
+.sorting_section{
+    padding: 20px 0;
+}
+
+.sorting_section_inner{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.sorting_section_text{
+    white-space: nowrap;
+}
+
+.sorting_section_variant{
+    border: none;
+    width: 180px;
+}
+
+.sorting_section_variant option{
+    width: 180px;
+}
+
+.products {
+    padding: 20px 0;
+}
+
