@@ -1,33 +1,55 @@
 // 01. Country Selector Component
 const CountrySelector = {
     init() {
-        const countrySelector = document.querySelector('.country-selector');
-        const selectedCountry = document.querySelector('.selected-country');
+        // Получаем все селекторы стран на странице (в шапке и футере)
+        const countrySelectors = document.querySelectorAll('.country-selector');
 
         // Restore saved country selection
         this.restoreSavedCountry();
 
-        // Setup event listeners
-        this.setupEventListeners(countrySelector, selectedCountry);
+        // Setup event listeners для всех селекторов стран
+        countrySelectors.forEach(selector => {
+            const selectedCountry = selector.querySelector('.selected-country');
+            if (selectedCountry) {
+                this.setupEventListeners(selector, selectedCountry);
+            }
+        });
     },
 
     restoreSavedCountry() {
-        const selectedCountry = document.querySelector('.selected-country');
+        const selectedCountries = document.querySelectorAll('.selected-country');
         const savedCountry = localStorage.getItem('selectedCountry');
-        if (savedCountry) {
+        if (savedCountry && selectedCountries.length > 0) {
             const { flag, name, currency } = JSON.parse(savedCountry);
-            selectedCountry.querySelector('img').src = flag;
-            selectedCountry.querySelector('.country-name').textContent = name;
-            selectedCountry.querySelector('.country-currency').textContent = currency;
+
+            // Применяем сохраненную страну ко всем селекторам на странице
+            selectedCountries.forEach(selectedCountry => {
+                const flagImg = selectedCountry.querySelector('img');
+                const countryNameEl = selectedCountry.querySelector('.country-name');
+                const countryCurrencyEl = selectedCountry.querySelector('.country-currency');
+
+                if (flagImg) flagImg.src = flag;
+                if (countryNameEl) countryNameEl.textContent = name;
+                if (countryCurrencyEl) countryCurrencyEl.textContent = currency;
+            });
         }
     },
 
     setupEventListeners(countrySelector, selectedCountry) {
         if (!countrySelector || !selectedCountry) return;
 
+        // Определяем, находится ли селектор в футере
+        const isFooterSelector = countrySelector.closest('.footer-country') !== null;
+
         // Toggle dropdown
         selectedCountry.addEventListener('click', (e) => {
             e.stopPropagation();
+            // Закрываем все другие открытые селекторы перед открытием текущего
+            document.querySelectorAll('.country-selector.active').forEach(selector => {
+                if (selector !== countrySelector) {
+                    selector.classList.remove('active');
+                }
+            });
             countrySelector.classList.toggle('active');
         });
 
@@ -48,15 +70,21 @@ const CountrySelector = {
     },
 
     updateSelectedCountry(countryElement) {
-        const selectedCountry = document.querySelector('.selected-country');
+        const selectedCountries = document.querySelectorAll('.selected-country');
         const countryFlag = countryElement.querySelector('img').src;
         const countryName = countryElement.querySelector('.country-name').textContent;
         const countryCurrency = countryElement.querySelector('.country-currency').textContent;
 
-        // Update display
-        selectedCountry.querySelector('img').src = countryFlag;
-        selectedCountry.querySelector('.country-name').textContent = countryName;
-        selectedCountry.querySelector('.country-currency').textContent = countryCurrency;
+        // Обновляем отображение во всех селекторах стран
+        selectedCountries.forEach(selectedCountry => {
+            const flagImg = selectedCountry.querySelector('img');
+            const countryNameEl = selectedCountry.querySelector('.country-name');
+            const countryCurrencyEl = selectedCountry.querySelector('.country-currency');
+
+            if (flagImg) flagImg.src = countryFlag;
+            if (countryNameEl) countryNameEl.textContent = countryName;
+            if (countryCurrencyEl) countryCurrencyEl.textContent = countryCurrency;
+        });
 
         // Save selection
         localStorage.setItem('selectedCountry', JSON.stringify({

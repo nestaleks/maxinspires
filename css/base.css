@@ -131,6 +131,27 @@ ul {
     padding: 60px 0;
 }
 
+.page-banner {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
 /* Вспомогательные классы */
 .text-center {
     text-align: center;
@@ -184,5 +205,13 @@ ul {
 
     main {
         padding-top: 0;
+    }
+
+    .page-banner {
+        padding: 10px 0;
+    }
+
+    .page-title {
+        font-size: 2rem;
     }
 }
