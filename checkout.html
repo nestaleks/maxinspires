@@ -22,7 +22,7 @@
                 <nav>
                     <ul>
                         <li><a href="./index.html">Home</a></li>
-                        <li><a href="./catalog.html">Catalog</a></li>
+                        <li><a href="./catalog.html" class="active">Catalog</a></li>
                         <li><a href="./special-offer.html">Special Offer</a></li>
                         <li><a href="./contact.html">Contact</a></li>
                         <li><a href="./about.html">About</a></li>
@@ -68,6 +68,36 @@
                                 <span class="country-currency">EUR</span>
                             </li>
                         </ul>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <div class="header-search">
+                        <button class="search-trigger" aria-label="Open search">
+                            <img src="./images/icons/search.svg" alt="">
+                        </button>
+                    </div>
+                    <div class="search-modal">
+                        <div class="search-modal-inner">
+                            <div class="container">
+                                <form class="search-form" action="#" method="GET">
+                                    <input type="text" name="search" placeholder="Search..." autocomplete="off">
+                                    <button type="submit" aria-label="Search">
+                                        <img src="./images/icons/search.svg" alt="">
+                                    </button>
+                                </form>
+                                <button class="search-close" aria-label="Close search">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-cart">
+                        <a href="./cart.html" class="cart-trigger" aria-label="Open cart">
+                            <img src="./images/icons/cart.svg" alt="">
+                            <span class="cart-count">0</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -170,7 +200,7 @@
 
                             <div class="form-actions">
                                 <a href="./cart.html" class="back-link">← Return to cart</a>
-                                <button type="submit" class="continue-button">Continue to shipping</button>
+                                <button type="button" class="continue-button">Continue to shipping</button>
                             </div>
                         </form>
                     </div>
@@ -270,6 +300,22 @@
                                     <img src="./images/icons/apple-pay.svg" alt="Apple Pay" class="payment-icon">
                                 </label>
                             </div>
+
+                            <div class="payment-method">
+                                <input type="radio" name="payment" id="g-pay">
+                                <label for="g-pay">
+                                    <span>Apple Pay</span>
+                                    <img src="./images/icons/g-pay.svg" alt="Google Pay" class="payment-icon">
+                                </label>
+                            </div>
+
+                            <div class="payment-method">
+                                <input type="radio" name="payment" id="shop-pay">
+                                <label for="shop-pay">
+                                    <span>Shop Pay</span>
+                                    <img src="./images/icons/shop-pay.svg" alt="Shop Pay" class="payment-icon">
+                                </label>
+                            </div>
                         </div>
 
                         <div class="billing-address">
@@ -363,12 +409,8 @@
                                 <p>100% Secure Payments</p>
                             </div>
                             <div class="trust-feature">
-                                <img src="./images/icons/shipping.svg" alt="" class="feature-icon">
+                                <img src="./images/icons/delivery.svg" alt="" class="feature-icon">
                                 <p>Free Shipping Over $50</p>
-                            </div>
-                            <div class="trust-feature">
-                                <img src="./images/icons/return.svg" alt="" class="feature-icon">
-                                <p>30 Days Returns</p>
                             </div>
                         </div>
                     </div>
@@ -379,72 +421,89 @@
 
     <!-- FOOTER -->
     <footer>
-        <div class="container">
-            <div class="footer-top">
-                <div class="footer-col">
-                    <h3 class="footer-heading">Customer Service</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Shipping & Returns</a></li>
-                        <li><a href="#">Track Order</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3 class="footer-heading">About Us</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Our Story</a></li>
-                        <li><a href="#">Sustainability</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Press</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3 class="footer-heading">Legal</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                        <li><a href="#">Accessibility</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col subscribe-col">
-                    <h3 class="footer-heading">Join Our Newsletter</h3>
-                    <p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>
-                    <form class="subscribe-form">
-                        <div class="form-field">
-                            <input type="email" placeholder="Your email address" required>
-                            <button type="submit">Subscribe</button>
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-top-inner">
+                    <p class="footer-top-title">Subscribe to our emails</p>
+                    <div class="footer-top-actions">
+                        <form class="footer-subscribe-form" action="#" method="POST">
+                            <input type="email" name="email" placeholder="Enter your email" required>
+                            <button type="submit" aria-label="Subscribe">
+                                <img src="./images/icons/arrow-right.svg" alt="Subscribe">
+                            </button>
+                        </form>
+                        <div class="footer-socials">
+                            <a href="#" class="social-link">
+                                <img src="./images/icons/facebook.svg" alt="Facebook">
+                            </a>
+                            <a href="#" class="social-link">
+                                <img src="./images/icons/instagram.svg" alt="Instagram">
+                            </a>
                         </div>
-                    </form>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook">
-                            <img src="./images/icons/facebook.svg" alt="Facebook">
-                        </a>
-                        <a href="#" aria-label="Instagram">
-                            <img src="./images/icons/instagram.svg" alt="Instagram">
-                        </a>
-                        <a href="#" aria-label="Twitter">
-                            <img src="./images/icons/twitter.svg" alt="Twitter">
-                        </a>
-                        <a href="#" aria-label="Pinterest">
-                            <img src="./images/icons/pinterest.svg" alt="Pinterest">
-                        </a>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p class="copyright">© 2023 Your Store. All rights reserved.</p>
-                <div class="payment-methods">
-                    <img src="./images/icons/visa.svg" alt="Visa">
-                    <img src="./images/icons/mastercard.svg" alt="Mastercard">
-                    <img src="./images/icons/amex.svg" alt="American Express">
-                    <img src="./images/icons/paypal.svg" alt="PayPal">
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-banners">
+                    <div class="footer-country">
+                        <div class="country-selector">
+                            <div class="selected-country">
+                                <img src="https://flagcdn.com/w20/gb.png" alt="GB" class="country-flag">
+                                <span class="country-name">United Kingdom</span>
+                                <span class="country-currency">GBP</span>
+                                <span class="dropdown-arrow">▼</span>
+                            </div>
+                            <ul class="country-dropdown">
+                                <li data-country="gb" data-currency="GBP">
+                                    <img src="https://flagcdn.com/w20/gb.png" alt="GB">
+                                    <span class="country-name">United Kingdom</span>
+                                    <span class="country-currency">GBP</span>
+                                </li>
+                                <li data-country="de" data-currency="EUR">
+                                    <img src="https://flagcdn.com/w20/de.png" alt="DE">
+                                    <span class="country-name">Germany</span>
+                                    <span class="country-currency">EUR</span>
+                                </li>
+                                <li data-country="fr" data-currency="EUR">
+                                    <img src="https://flagcdn.com/w20/fr.png" alt="FR">
+                                    <span class="country-name">France</span>
+                                    <span class="country-currency">EUR</span>
+                                </li>
+                                <li data-country="it" data-currency="EUR">
+                                    <img src="https://flagcdn.com/w20/it.png" alt="IT">
+                                    <span class="country-name">Italy</span>
+                                    <span class="country-currency">EUR</span>
+                                </li>
+                                <li data-country="es" data-currency="EUR">
+                                    <img src="https://flagcdn.com/w20/es.png" alt="ES">
+                                    <span class="country-name">Spain</span>
+                                    <span class="country-currency">EUR</span>
+                                </li>
+                                <li data-country="nl" data-currency="EUR">
+                                    <img src="https://flagcdn.com/w20/nl.png" alt="NL">
+                                    <span class="country-name">Netherlands</span>
+                                    <span class="country-currency">EUR</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-payments">
+                        <img src="./images/icons/visa.svg" alt="Visa">
+                        <img src="./images/icons/mastercard.svg" alt="MasterCard">
+                        <img src="./images/icons/paypal.svg" alt="PayPal">
+                        <img src="./images/icons/amex.svg" alt="American Express">
+                    </div>
+                </div>
+                <div class="footer-bottom-rights">
+                    <p>2024, Maxinspires</p>
                 </div>
             </div>
         </div>
     </footer>
 
+    <script src="./js/main.js"></script>
     <script src="./js/checkout.js"></script>
 </body>
 </html>

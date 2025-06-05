@@ -207,7 +207,107 @@ const Navigation = {
     }
 };
 
-// 05. Hero Slider Component (без внешних библиотек)
+// 05. Checkout Process Component
+const CheckoutProcess = {
+    init() {
+        console.log('Инициализация компонента CheckoutProcess');
+        // Получаем все необходимые элементы
+        this.progressSteps = document.querySelectorAll('.progress-step');
+        this.checkoutSections = document.querySelectorAll('.checkout-section');
+        this.continueButtons = document.querySelectorAll('.continue-button');
+        this.backButtons = document.querySelectorAll('.back-button');
+
+        // Инициализация, если элементы найдены
+        if (this.progressSteps.length > 0 && this.checkoutSections.length > 0) {
+            console.log('Элементы найдены, настраиваем обработчики событий');
+            this.setupEventListeners();
+        } else {
+            console.warn('Элементы не найдены для CheckoutProcess');
+        }
+    },
+
+    setupEventListeners() {
+        // Обработчики для кнопок "Продолжить"
+        this.continueButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const currentSection = button.closest('.checkout-section');
+                const currentIndex = Array.from(this.checkoutSections).indexOf(currentSection);
+                const nextIndex = currentIndex + 1;
+
+                if (nextIndex < this.checkoutSections.length) {
+                    this.goToStep(nextIndex);
+                }
+            });
+        });
+
+        // Обработчики для кнопок "Назад"
+        this.backButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const currentSection = button.closest('.checkout-section');
+                const currentIndex = Array.from(this.checkoutSections).indexOf(currentSection);
+                const prevIndex = currentIndex - 1;
+
+                if (prevIndex >= 0) {
+                    this.goToStep(prevIndex);
+                }
+            });
+        });
+
+        // Обработчик для выбора способа доставки
+        const shippingOptions = document.querySelectorAll('.shipping-option input[type="radio"]');
+        shippingOptions.forEach(option => {
+            option.addEventListener('change', () => {
+                this.updateOrderSummary(option.id);
+            });
+        });
+
+        // Обработчик для выбора способов оплаты
+        const paymentMethods = document.querySelectorAll('.payment-method input[type="radio"]');
+        paymentMethods.forEach(method => {
+            method.addEventListener('change', () => {
+                // Скрываем все формы оплаты
+                document.querySelectorAll('.payment-form').forEach(form => {
+                    form.classList.remove('active');
+                });
+
+                // Отображаем форму для выбранного метода
+                const methodId = method.id;
+                if (methodId === 'credit-card') {
+                    document.querySelector('.credit-card-form').classList.add('active');
+                } else if (methodId === 'paypal') {
+                    document.querySelector('.paypal-form').classList.add('active');
+                } else if (methodId === 'apple-pay') {
+                    document.querySelector('.apple-pay-form').classList.add('active');
+                }
+            });
+        });
+    },
+
+    goToStep(stepIndex) {
+        // Обновляем активный шаг в прогресс-баре
+        this.progressSteps.forEach((step, index) => {
+            if (index <= stepIndex) {
+                step.classList.add('active');
+            } else {
+                step.classList.remove('active');
+            }
+        });
+
+        // Показываем нужную секцию и скрываем остальные
+        this.checkoutSections.forEach((section, index) => {
+            if (index === stepIndex) {
+                section.classList.remove('hidden');
+            } else {
+                section.classList.add('hidden');
+            }
+        });
+
+        // Прокручиваем к верху страницы
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+};
+
+// 06. Hero Slider Component (без внешних библиотек)
 const HeroSlider = {
     slider: null,
     slides: null,
@@ -1075,4 +1175,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Запускаем предзагрузку изображений слайдера
     preloadSliderImages();
+    CheckoutProcess.init();
 });

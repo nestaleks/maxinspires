@@ -55,7 +55,6 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000;
-    /* Улучшаем отображение при прокрутке */
     transition: box-shadow 0.3s ease;
 }
 
@@ -94,8 +93,9 @@ ul {
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 40px;
+    font-weight: 400;
     text-align: center;
     font-family: 'Assistant Bold';
     position: relative;

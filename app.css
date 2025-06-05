@@ -19,9 +19,9 @@
 @import url(./css/home.css);
 /* Catalog */
 @import url(./css/catalog.css);
-/* Product */
-@import url(./css/product.css);
 /* Product Page */
 @import url(./css/product-page.css);
 /* Cart */
 @import url(./css/cart.css);
+/*Checkout*/
+@import url(./css/checkout.css);
