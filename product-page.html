@@ -21,8 +21,8 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="./index.html">Home</a></li>
-                        <li><a href="./catalog.html" class="active">Catalog</a></li>
+                        <li><a href="./index.html" class="active">Home</a></li>
+                        <li><a href="./catalog.html">Catalog</a></li>
                         <li><a href="./special-offer.html">Special Offer</a></li>
                         <li><a href="./contact.html">Contact</a></li>
                         <li><a href="./about.html">About</a></li>
@@ -104,468 +104,525 @@
         </div>
     </header>
     <!-- MAIN CONTENT -->
-    <main>
-        <div class="product_page">
-            <div class="container">
-                <div class="product_inner">
-                    <div class="slider_box">
-                        <div class="slider">
-                            <div class="slider-main">
-                                <div class="slides-container">
-                                    <div class="slide active">
-                                        <img src="./images/image-to-image.png" alt="Photo1"/>
-                                    </div>
-                                    <div class="slide">
-                                        <img src="./images/image-to-image2.png" alt="Photo2"/>
-                                    </div> 
-                                    <div class="slide">
-                                        <img src="./images/image-to-image.png" alt="Photo3"/>
-                                    </div>
-                                    <div class="slide">
-                                        <img src="./images/image-to-image2.png" alt="Photo4"/>
-                                    </div>
-                                    <div class="slide">
-                                        <img src="./images/image-to-image.png" alt="Photo5"/>
-                                    </div>
-                                    <div class="slide">
-                                        <img src="./images/image-to-image2.png" alt="Photo6"/>
-                                    </div>
-                                </div>
-                                <button class="btn-slide prev">
-                                    <img src="./images/icons/arrow-prev.svg" alt="Previous slide">
-                                </button>
-                                <button class="btn-slide next">
-                                    <img src="./images/icons/arrow-next.svg" alt="Next slide">
-                                </button>
-                            </div>
-                            <div class="slider-thumbs">
-                                <div class="thumb active">
+    <main class="product-page">
+        <div class="container">
+            <div class="product_inner">
+                <div class="slider_box">
+                    <div class="slider">
+                        <div class="slider-main">
+                            <div class="slides-container">
+                                <div class="slide active">
                                     <img src="./images/image-to-image.png" alt="Photo1"/>
                                 </div>
-                                <div class="thumb">
+                                <div class="slide">
                                     <img src="./images/image-to-image2.png" alt="Photo2"/>
-                                </div>
-                                <div class="thumb">
+                                </div> 
+                                <div class="slide">
                                     <img src="./images/image-to-image.png" alt="Photo3"/>
                                 </div>
-                                <div class="thumb">
+                                <div class="slide">
                                     <img src="./images/image-to-image2.png" alt="Photo4"/>
                                 </div>
-                                <div class="thumb">
+                                <div class="slide">
                                     <img src="./images/image-to-image.png" alt="Photo5"/>
                                 </div>
-                                <div class="thumb">
+                                <div class="slide">
                                     <img src="./images/image-to-image2.png" alt="Photo6"/>
                                 </div>
                             </div>
+                            <button class="btn-slide prev">
+                                <img src="./images/icons/arrow-prev.svg" alt="Previous slide">
+                            </button>
+                            <button class="btn-slide next">
+                                <img src="./images/icons/arrow-next.svg" alt="Next slide">
+                            </button>
+                        </div>
+                        <div class="slider-thumbs">
+                            <div class="thumb active">
+                                <img src="./images/image-to-image.png" alt="Photo1"/>
+                            </div>
+                            <div class="thumb">
+                                <img src="./images/image-to-image2.png" alt="Photo2"/>
+                            </div>
+                            <div class="thumb">
+                                <img src="./images/image-to-image.png" alt="Photo3"/>
+                            </div>
+                            <div class="thumb">
+                                <img src="./images/image-to-image2.png" alt="Photo4"/>
+                            </div>
+                            <div class="thumb">
+                                <img src="./images/image-to-image.png" alt="Photo5"/>
+                            </div>
+                            <div class="thumb">
+                                <img src="./images/image-to-image2.png" alt="Photo6"/>
+                            </div>
                         </div>
                     </div>
-                    <div class="product_description">
-                        <p class="product_category">Headphones</p>
-                        <h4 class="product_title">A4Tech Bloody G575P</h4>
-                        <div class="product_price-box">
-                            <p class="product_current_price">$30.00</p>
-                            <p class="product_compare_price">$75.00</p>
-                        </div>
-                        <p class="product_article">Article: <span>398846_02</span></p>
-                        <p class="product_shipping">Tax included. <a href="#">Shipping</a> calculated at checkout.</p>
-                        <div class="product_details_box">
-                            <p class="product_size_title">Size:</p>
-                            <div class="size-choose">
-                                <div class="choose__size-btn active">
-                                    <input data-image="S" type="radio" id="S" name="size" value="S">
-                                    <label for="S"><span>3-door</span></label>
-                                </div>
-                                <div class="choose__size-btn">
-                                    <input data-image="L" type="radio" id="L" name="size" value="L">
-                                    <label for="L"><span>5-door</span></label>
-                                </div>
-                                <div class="choose__size-btn">
-                                    <input data-image="XXL" type="radio" id="XXL" name="size" value="XXL">
-                                    <label for="XXL"><span>Universal</span></label>
-                                </div>
-                            </div>
-                            <p class="product_color_title">Color:</p>
-                            <div class="color-choose">
-                                <div class="choose__color-btn active">
-                                    <input data-image="black" type="radio" id="black" name="color" value="black">
-                                    <label for="black"><span></span></label>
-                                </div>
-                                <div class="choose__color-btn">
-                                    <input data-image="yellow" type="radio" id="yellow" name="color" value="yellow">
-                                    <label for="yellow"><span></span></label>
-                                </div>
-                                <div class="choose__color-btn">
-                                    <input data-image="white" type="radio" id="white" name="color" value="white checked">
-                                    <label for="white"><span></span></label>
-                                </div>
-                            </div>
-                            <div class="quantity-cart-favo">
-                                <div class="quantity">
-                                    <button class="minus" aria-label="Decrease">&minus;</button>
-                                    <input style="border-radius: 0; border: 1px solid var(--dark-gray);" type="number" class="input-box" value="1" min="1" max="10">
-                                    <button class="plus" aria-label="Increase">&plus;</button>
-                                </div>
-                                <button class="to-cart">Add to cart</button>
-                                <div class="add-to-favo">
-                                    <label for="checkbox">
-                                        <div class="label">
-                                            <input class="input-favo" type="checkbox" id="checkbox">
-                                            <div class="heart">
-                                                <svg viewBox="0 0 544.582 544.582">
-                                                    <path d="M448.069,57.839c-72.675-23.562-150.781,15.759-175.721,87.898C247.41,73.522,169.303,34.277,96.628,57.839
-                C23.111,81.784-16.975,160.885,6.894,234.708c22.95,70.38,235.773,258.876,263.006,258.876
-                c27.234,0,244.801-188.267,267.751-258.876C561.595,160.732,521.509,81.631,448.069,57.839z">
-                                                </svg>
-                                                <svg viewBox="0 0 544.582 544.582">
-                                                    <path d="M448.069,57.839c-72.675-23.562-150.781,15.759-175.721,87.898C247.41,73.522,169.303,34.277,96.628,57.839
-                C23.111,81.784-16.975,160.885,6.894,234.708c22.95,70.38,235.773,258.876,263.006,258.876
-                c27.234,0,244.801-188.267,267.751-258.876C561.595,160.732,521.509,81.631,448.069,57.839z">
-                                                </svg>
-                                            </div>
-                                        </div>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="reference_box">
-                            <div class="reference_box-1">
-                                <div class="reference_question">
-                                    <img class="reference_icon" src="./images/icons/question.svg" alt="">
-                                    <a class="reference_question_text" href="#">Ask a question</a>
-                                </div>
-                                <div class="reference_delivery">
-                                    <img class="reference_icon" src="./images/icons/delivery.svg" alt="">
-                                    <a class="reference_delivery_text" href="#">Delivery & Return</a>
-                                </div>
-        
-                            </div>
-                            <div class="reference_box-2">
-                                <div class="reference_share">
-                                    <img class="reference_icon" src="./images/icons/share.svg" alt="">
-                                    <p class="reference_share_text" href="#">Share</p>
-                                    <a class="reference_share_link" href="#">
-                                        <img class="reference_share_icon" src="./images/icons/facebook-logo.svg" alt="">
-                                    </a>
-                                    <a class="reference_share_link" href="#">
-                                        <img class="reference_share_icon" src="./images/icons/instagram-logo.svg" alt="">
-                                    </a>
-                                    <a class="reference_share_link" href="#">
-                                        <img class="reference_share_icon" src="./images/icons/telegram-logo.svg" alt="">
-                                    </a>
-                                    <a class="reference_share_link" href="#">
-                                        <img class="reference_share_icon" src="./images/icons/x_logo.svg" alt="">
-                                    </a>
-                                    <a class="reference_share_link" href="#">
-                                        <img class="reference_share_icon" src="./images/icons/link_logo.svg" alt="">
-        
-                                    </a>
-                                    <a class="reference_share_link" href="#">
-                                        <img class="reference_share_icon" src="./images/icons/mail_logo.svg" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="reference_box-3">
-                                <div class="reference_guarantee">
-                                    <img class="reference_icon" src="./images/icons/guarantee.svg" alt="">
-                                    <a class="reference_guarantee_text" href="#">Guarantee Safe Checkout</a>
-                                    <img class="reference_payment_icon" src="./images/icons/mastercard.svg" alt="">
-                                    <img class="reference_payment_icon" src="./images/icons/visa.svg" alt="">
-                                    <img class="reference_payment_icon" src="./images/icons/paypal.svg" alt="">
-                                    <img class="reference_payment_icon" src="./images/icons/amex.svg" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <form class="out_of_stock__form" action="#">
-                            <p class="out_of_stock_title">Sorry we're temporarily out of stock</p>
-                            <p class="out_of_stock_text">Enter your email and we will notify you when it's available</p>
-                            <div class="out_of_stock_field">
-                                <input class="out_of_stock_input" type="email" placeholder="Enter your email">
-                                <button class="out_of_stock_btn" type="submit">Submit</button>
-                            </div>
-                        </form>
-                    </div>
+                    <a href="#product-gallery" class="product-gallery-link">
+                        <p>Product Gallery</p>
+                        <img src="./images/icons/product-gallery.svg" alt="">
+                    </a>
                 </div>
-                <div class="description_tabs">
-                    <div class="tabs">
-                        <ul>
-                            <li class="tabs_item selected">
-                                <a class="tabs_item_link" href="#view1">About</a>
-                            </li>
-                            <li class="tabs_item">
-                                <a class="tabs_item_link" href="#view2">Specification</a>
-                            </li>
-                            <li class="tabs_item">
-                                <a class="tabs_item_link" href="#view3">Reviews</a>
-                            </li>
-                        </ul>
-                        <div class="tabcontents">
-                            <div id="view1" class="active">
-                                <h6 class="description_box_title">Description Title</h6>
-                                <p class="description_box_text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis repellendus ut, consequatur aliquid unde dignissimos dolores iure quae repellat magni ea harum adipisci voluptates exercitationem odio velit quisquam accusamus perspiciatis.</p>
-                                <h6 class="description_box_title">Description Title</h6>
-                                <p class="description_box_text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis repellendus ut, consequatur aliquid unde dignissimos dolores iure quae repellat magni ea harum adipisci voluptates exercitationem odio velit quisquam accusamus perspiciatis.</p>
-                                <h6 class="description_box_title">Description Title</h6>
-                                <p class="description_box_text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis repellendus ut, consequatur aliquid unde dignissimos dolores iure quae repellat magni ea harum adipisci voluptates exercitationem odio velit quisquam accusamus perspiciatis.</p>
+                <div class="product_description">
+                    <p class="product_category">Headphones</p>
+                    <h4 class="product_title">A4Tech Bloody G575P</h4>
+                    <div class="product_price-box">
+                        <p class="product_current_price">$30.00</p>
+                        <p class="product_compare_price">$75.00</p>
+                    </div>
+                    <p class="product_article">Article: <span>398846_02</span></p>
+                    <p class="product_shipping">Tax included. <a href="#">Shipping</a> calculated at checkout.</p>
+                    <div class="product_details_box">
+                        <p class="product_size_title">Size:</p>
+                        <div class="size-choose">
+                            <div class="choose__size-btn active">
+                                <input data-image="S" type="radio" id="S" name="size" value="S">
+                                <label for="S"><span>3-door</span></label>
                             </div>
-                            <div id="view2">
-                                <h6 class="specification_box_title">Specifications</h6>
-                                <table class="specification_table">
-                                    <tbody>
-                                        <tr>
-                                          <th>Material</th>
-                                          <td>22</td>
-                                        </tr>
-                                        <tr>
-                                          <th>Country</th>
-                                          <td>45</td>
-                                        </tr>
-                                        <tr>
-                                          <th>Category</th>
-                                          <td>29</td>
-                                        </tr>
-                                        <tr>
-                                          <th>Series</th>
-                                          <td>36</td>
-                                        </tr>
-                                      </tbody>
-                                </table>
+                            <div class="choose__size-btn">
+                                <input data-image="L" type="radio" id="L" name="size" value="L">
+                                <label for="L"><span>5-door</span></label>
                             </div>
-                            <div id="view3">
-                                <section id="testimonials">
-                                    <div class="testimonial-box-container">
-                                        <div class="testimonial-box">
-                                            <div class="box-top">
-                                                <div class="profile">
-                                                    <div class="profile-img">
-                                                        <img src="https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Ninja-2-512.png" />
-                                                    </div>
-                                                    <div class="name-user">
-                                                        <strong>Liam mendes</strong>
-                                                        <span>@liammendes</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="client-comment">
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.</p>
-                                            </div>
-                                        </div>
-                                        <div class="testimonial-box">
-                                            <div class="box-top">
-                                                <div class="profile">
-                                                    <div class="profile-img">
-                                                        <img src="https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Ninja-2-512.png" />
-                                                    </div>
-                                                    <div class="name-user">
-                                                        <strong>Noah Wood</strong>
-                                                        <span>@noahwood</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="client-comment">
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.</p>
-                                            </div>
-                                        </div>
-                                        <div class="testimonial-box">
-                                            <div class="box-top">
-                                                <div class="profile">
-                                                    <div class="profile-img">
-                                                        <img src="https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Ninja-2-512.png" />
-                                                    </div>
-                                                    <div class="name-user">
-                                                        <strong>Oliver Queen</strong>
-                                                        <span>@oliverqueen</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="client-comment">
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.</p>
-                                            </div>
+                            <div class="choose__size-btn">
+                                <input data-image="XXL" type="radio" id="XXL" name="size" value="XXL">
+                                <label for="XXL"><span>Universal</span></label>
+                            </div>
+                        </div>
+                        <p class="product_color_title">Color:</p>
+                        <div class="color-choose">
+                            <div class="choose__color-btn active">
+                                <input data-image="black" type="radio" id="black" name="color" value="black">
+                                <label for="black"><span></span></label>
+                            </div>
+                            <div class="choose__color-btn">
+                                <input data-image="yellow" type="radio" id="yellow" name="color" value="yellow">
+                                <label for="yellow"><span></span></label>
+                            </div>
+                            <div class="choose__color-btn">
+                                <input data-image="white" type="radio" id="white" name="color" value="white checked">
+                                <label for="white"><span></span></label>
+                            </div>
+                        </div>
+                        <div class="quantity-cart-favo">
+                            <div class="quantity">
+                                <button class="minus" aria-label="Decrease">&minus;</button>
+                                <input style="border-radius: 0; border: 1px solid var(--dark-gray);" type="number" class="input-box" value="1" min="1" max="10">
+                                <button class="plus" aria-label="Increase">&plus;</button>
+                            </div>
+                            <button class="to-cart">Add to cart</button>
+                            <div class="add-to-favo">
+                                <label for="checkbox">
+                                    <div class="label">
+                                        <input class="input-favo" type="checkbox" id="checkbox">
+                                        <div class="heart">
+                                            <svg viewBox="0 0 544.582 544.582">
+                                                <path d="M448.069,57.839c-72.675-23.562-150.781,15.759-175.721,87.898C247.41,73.522,169.303,34.277,96.628,57.839
+            C23.111,81.784-16.975,160.885,6.894,234.708c22.95,70.38,235.773,258.876,263.006,258.876
+            c27.234,0,244.801-188.267,267.751-258.876C561.595,160.732,521.509,81.631,448.069,57.839z">
+                                            </svg>
+                                            <svg viewBox="0 0 544.582 544.582">
+                                                <path d="M448.069,57.839c-72.675-23.562-150.781,15.759-175.721,87.898C247.41,73.522,169.303,34.277,96.628,57.839
+            C23.111,81.784-16.975,160.885,6.894,234.708c22.95,70.38,235.773,258.876,263.006,258.876
+            c27.234,0,244.801-188.267,267.751-258.876C561.595,160.732,521.509,81.631,448.069,57.839z">
+                                            </svg>
                                         </div>
                                     </div>
-                                  </section>
+                                </label>
                             </div>
                         </div>
                     </div>
+                    <div class="reference_box">
+                        <div class="reference_box-1">
+                            <div class="reference_question">
+                                <img class="reference_icon" src="./images/icons/question.svg" alt="">
+                                <a class="reference_question_text" href="#">Ask a question</a>
+                            </div>
+                            <div class="reference_delivery">
+                                <img class="reference_icon" src="./images/icons/delivery.svg" alt="">
+                                <a class="reference_delivery_text" href="#">Delivery & Return</a>
+                            </div>
+    
+                        </div>
+                        <div class="reference_box-2">
+                            <div class="reference_share">
+                                <img class="reference_icon" src="./images/icons/share.svg" alt="">
+                                <p class="reference_share_text" href="#">Share</p>
+                                <a class="reference_share_link" href="#">
+                                    <img class="reference_share_icon" src="./images/icons/facebook-logo.svg" alt="">
+                                </a>
+                                <a class="reference_share_link" href="#">
+                                    <img class="reference_share_icon" src="./images/icons/instagram-logo.svg" alt="">
+                                </a>
+                                <a class="reference_share_link" href="#">
+                                    <img class="reference_share_icon" src="./images/icons/telegram-logo.svg" alt="">
+                                </a>
+                                <a class="reference_share_link" href="#">
+                                    <img class="reference_share_icon" src="./images/icons/x_logo.svg" alt="">
+                                </a>
+                                <a class="reference_share_link" href="#">
+                                    <img class="reference_share_icon" src="./images/icons/link_logo.svg" alt="">
+    
+                                </a>
+                                <a class="reference_share_link" href="#">
+                                    <img class="reference_share_icon" src="./images/icons/mail_logo.svg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="reference_box-3">
+                            <div class="reference_guarantee">
+                                <img class="reference_icon" src="./images/icons/guarantee.svg" alt="">
+                                <a class="reference_guarantee_text" href="#">Guarantee Safe Checkout</a>
+                                <img class="reference_payment_icon" src="./images/icons/mastercard.svg" alt="">
+                                <img class="reference_payment_icon" src="./images/icons/visa.svg" alt="">
+                                <img class="reference_payment_icon" src="./images/icons/paypal.svg" alt="">
+                                <img class="reference_payment_icon" src="./images/icons/amex.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <form class="out_of_stock__form" action="#">
+                        <p class="out_of_stock_title">Sorry we're temporarily out of stock</p>
+                        <p class="out_of_stock_text">Enter your email and we will notify you when it's available</p>
+                        <div class="out_of_stock_field">
+                            <input class="out_of_stock_input" type="email" placeholder="Enter your email">
+                            <button class="out_of_stock_btn" type="submit">Submit</button>
+                        </div>
+                    </form>
                 </div>
-                <section class="offers">
-                    <div class="container">
-                        <h2 class="section-title">You may also like</h2>
-                        <div class="offers-inner">
-                            <div class="offers-grid">
-                                <div class="product-item">
-                                    <p class="product-item-badge">Sale</p>
-                                    <div class="product-image">
-                                        <img src="./images/image-to-image.png" alt="Women's Top Product Image">
-                                        <ul class="product-quick-links">
-                                            <li>
-                                                <button type="button" class="quick-link-btn" data-action="compare">
-                                                    <img src="./images/icons/compare.svg" alt="Compare" class="quick-link-icon">
-                                                    <span class="quick-link-tooltip">Compare</span>
-                                                </button>
-                                            </li>
-                                            <li>
-                                                <button type="button" class="quick-link-btn" data-action="quick-view">
-                                                    <img src="./images/icons/search.svg" alt="Quick View" class="quick-link-icon">
-                                                    <span class="quick-link-tooltip">Quick View</span>
-                                                </button>
-                                            </li>
-                                            <li>
-                                                <button type="button" class="quick-link-btn" data-action="wishlist">
-                                                    <img src="./images/icons/heart.svg" alt="Add to Wishlist" class="quick-link-icon">
-                                                    <span class="quick-link-tooltip">Add to Wishlist</span>
-                                                </button>
-                                            </li>
-                                        </ul>
-                                        <a href="#" class="click-to-more" data-content="click to more">
-                                            <span class="more-text">More Details</span>
-                                        </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3 class="product-title">
-                                            <a href="#">Women's Top</a>
-                                        </h3>
-                                        <div class="product-price">
-                                            <div class="product-compare-price">
-                                                <span class="product-currency">£</span>89.99
-                                            </div>
-                                            <div class="product-current-price">
-                                                <span class="product-currency">£</span>49.99
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-item">
-                                    <p class="product-item-badge">Sale</p>
-                                    <div class="product-image">
-                                        <img src="./images/image-to-image.png" alt="Women's Top Product Image">
-                                        <ul class="product-quick-links">
-                                            <li>
-                                                <button type="button" class="quick-link-btn" data-action="compare">
-                                                    <img src="./images/icons/compare.svg" alt="Compare" class="quick-link-icon">
-                                                    <span class="quick-link-tooltip">Compare</span>
-                                                </button>
-                                            </li>
-                                            <li>
-                                                <button type="button" class="quick-link-btn" data-action="quick-view">
-                                                    <img src="./images/icons/search.svg" alt="Quick View" class="quick-link-icon">
-                                                    <span class="quick-link-tooltip">Quick View</span>
-                                                </button>
-                                            </li>
-                                            <li>
-                                                <button type="button" class="quick-link-btn" data-action="wishlist">
-                                                    <img src="./images/icons/heart.svg" alt="Add to Wishlist" class="quick-link-icon">
-                                                    <span class="quick-link-tooltip">Add to Wishlist</span>
-                                                </button>
-                                            </li>
-                                        </ul>
-                                        <a href="#" class="click-to-more" data-content="click to more">
-                                            <span class="more-text">More Details</span>
-                                        </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3 class="product-title">
-                                            <a href="#">Women's Top</a>
-                                        </h3>
-                                        <div class="product-price">
-                                            <div class="product-compare-price">
-                                                <span class="product-currency">£</span>89.99
-                                            </div>
-                                            <div class="product-current-price">
-                                                <span class="product-currency">£</span>49.99
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-item">
-                                    <p class="product-item-badge">Sale</p>
-                                    <div class="product-image">
-                                        <img src="./images/image-to-image.png" alt="Women's Top Product Image">
-                                        <ul class="product-quick-links">
-                                            <li>
-                                                <button type="button" class="quick-link-btn" data-action="compare">
-                                                    <img src="./images/icons/compare.svg" alt="Compare" class="quick-link-icon">
-                                                    <span class="quick-link-tooltip">Compare</span>
-                                                </button>
-                                            </li>
-                                            <li>
-                                                <button type="button" class="quick-link-btn" data-action="quick-view">
-                                                    <img src="./images/icons/search.svg" alt="Quick View" class="quick-link-icon">
-                                                    <span class="quick-link-tooltip">Quick View</span>
-                                                </button>
-                                            </li>
-                                            <li>
-                                                <button type="button" class="quick-link-btn" data-action="wishlist">
-                                                    <img src="./images/icons/heart.svg" alt="Add to Wishlist" class="quick-link-icon">
-                                                    <span class="quick-link-tooltip">Add to Wishlist</span>
-                                                </button>
-                                            </li>
-                                        </ul>
-                                        <a href="#" class="click-to-more" data-content="click to more">
-                                            <span class="more-text">More Details</span>
-                                        </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3 class="product-title">
-                                            <a href="#">Women's Top</a>
-                                        </h3>
-                                        <div class="product-price">
-                                            <div class="product-compare-price">
-                                                <span class="product-currency">£</span>89.99
-                                            </div>
-                                            <div class="product-current-price">
-                                                <span class="product-currency">£</span>49.99
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-item">
-                                    <p class="product-item-badge">Sale</p>
-                                    <div class="product-image">
-                                        <img src="./images/image-to-image.png" alt="Women's Top Product Image">
-                                        <ul class="product-quick-links">
-                                            <li>
-                                                <button type="button" class="quick-link-btn" data-action="compare">
-                                                    <img src="./images/icons/compare.svg" alt="Compare" class="quick-link-icon">
-                                                    <span class="quick-link-tooltip">Compare</span>
-                                                </button>
-                                            </li>
-                                            <li>
-                                                <button type="button" class="quick-link-btn" data-action="quick-view">
-                                                    <img src="./images/icons/search.svg" alt="Quick View" class="quick-link-icon">
-                                                    <span class="quick-link-tooltip">Quick View</span>
-                                                </button>
-                                            </li>
-                                            <li>
-                                                <button type="button" class="quick-link-btn" data-action="wishlist">
-                                                    <img src="./images/icons/heart.svg" alt="Add to Wishlist" class="quick-link-icon">
-                                                    <span class="quick-link-tooltip">Add to Wishlist</span>
-                                                </button>
-                                            </li>
-                                        </ul>
-                                        <a href="#" class="click-to-more" data-content="click to more">
-                                            <span class="more-text">More Details</span>
-                                        </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3 class="product-title">
-                                            <a href="#">Women's Top</a>
-                                        </h3>
-                                        <div class="product-price">
-                                            <div class="product-compare-price">
-                                                <span class="product-currency">£</span>89.99
-                                            </div>
-                                            <div class="product-current-price">
-                                                <span class="product-currency">£</span>49.99
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
             </div>
+            <div class="description_tabs">
+                <div class="tabs">
+                    <ul>
+                        <li class="tabs_item selected">
+                            <a class="tabs_item_link" href="#view1">About</a>
+                        </li>
+                        <li class="tabs_item">
+                            <a class="tabs_item_link" href="#view2">Specification</a>
+                        </li>
+                        <li class="tabs_item">
+                            <a class="tabs_item_link" href="#view3">Reviews</a>
+                        </li>
+                    </ul>
+                    <div class="tabcontents">
+                        <div id="view1" class="active">
+                            <h6 class="description_box_title">Description Title</h6>
+                            <p class="description_box_text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis repellendus ut, consequatur aliquid unde dignissimos dolores iure quae repellat magni ea harum adipisci voluptates exercitationem odio velit quisquam accusamus perspiciatis.</p>
+                            <h6 class="description_box_title">Description Title</h6>
+                            <p class="description_box_text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis repellendus ut, consequatur aliquid unde dignissimos dolores iure quae repellat magni ea harum adipisci voluptates exercitationem odio velit quisquam accusamus perspiciatis.</p>
+                            <h6 class="description_box_title">Description Title</h6>
+                            <p class="description_box_text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis repellendus ut, consequatur aliquid unde dignissimos dolores iure quae repellat magni ea harum adipisci voluptates exercitationem odio velit quisquam accusamus perspiciatis.</p>
+                        </div>
+                        <div id="view2">
+                            <h6 class="specification_box_title">Specifications</h6>
+                            <table class="specification_table">
+                                <tbody>
+                                    <tr>
+                                      <th>Material</th>
+                                      <td>22</td>
+                                    </tr>
+                                    <tr>
+                                      <th>Country</th>
+                                      <td>45</td>
+                                    </tr>
+                                    <tr>
+                                      <th>Category</th>
+                                      <td>29</td>
+                                    </tr>
+                                    <tr>
+                                      <th>Series</th>
+                                      <td>36</td>
+                                    </tr>
+                                  </tbody>
+                            </table>
+                        </div>
+                        <div id="view3">
+                            <section id="testimonials">
+                                <div class="testimonial-box-container">
+                                    <div class="testimonial-box">
+                                        <div class="box-top">
+                                            <div class="profile">
+                                                <div class="profile-img">
+                                                    <img src="https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Ninja-2-512.png" />
+                                                </div>
+                                                <div class="name-user">
+                                                    <strong>Liam mendes</strong>
+                                                    <span>@liammendes</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="client-comment">
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.</p>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial-box">
+                                        <div class="box-top">
+                                            <div class="profile">
+                                                <div class="profile-img">
+                                                    <img src="https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Ninja-2-512.png" />
+                                                </div>
+                                                <div class="name-user">
+                                                    <strong>Noah Wood</strong>
+                                                    <span>@noahwood</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="client-comment">
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.</p>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial-box">
+                                        <div class="box-top">
+                                            <div class="profile">
+                                                <div class="profile-img">
+                                                    <img src="https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Ninja-2-512.png" />
+                                                </div>
+                                                <div class="name-user">
+                                                    <strong>Oliver Queen</strong>
+                                                    <span>@oliverqueen</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="client-comment">
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quaerat quis? Provident temporibus architecto asperiores nobis maiores nisi a. Quae doloribus ipsum aliquam tenetur voluptates incidunt blanditiis sed atque cumque.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                              </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="product-gallery" id="product-gallery">
+                <div class="container">
+                    <h2 class="section-title">Product Gallery</h2>
+                    <div class="product-gallery-inner">
+                        <!-- 1 left, 2 right -->
+                <div class="one-two-images">
+                    <div class="single-image">
+                        <img src="./images/gallery/gallery_01.jpg" alt="Image 1" />
+                    </div>
+                    <div class="two-images">
+                        <img src="./images/gallery/gallery_02.jpg" alt="Image 2" />
+                        <img src="./images/gallery/gallery_03.jpg" alt="Image 3" />
+                    </div>
+                </div>
+                <!-- 3 in row -->
+                <div class="row-images">
+                    <img src="./images/gallery/gallery_04.jpg" alt="Image 4" />
+                    <img src="./images/gallery/gallery_05.jpg" alt="Image 5" />
+                    <img src="./images/gallery/gallery_06.jpg" alt="Image 6" />
+                </div>
+                <!-- 2 left, 1 right -->
+                <div class="two-one-images">
+                    <div class="two-images">
+                        <img src="./images/gallery/gallery_07.jpg" alt="Image 7" />
+                        <img src="./images/gallery/gallery_08.jpg" alt="Image 8" />
+                    </div>
+                    <div class="single-image">
+                        <img src="./images/gallery/gallery_09.jpg" alt="Image 9" />
+                    </div>
+                </div>
+                <!-- 3 in row -->
+                <div class="row-images">
+                    <img src="./images/gallery/gallery_10.jpg" alt="Image 4" />
+                    <img src="./images/gallery/gallery_11.jpg" alt="Image 5" />
+                    <img src="./images/gallery/gallery_12.jpg" alt="Image 6" />
+                </div>
+                <!-- 1 left, 2 right -->
+                <div class="one-two-images">
+                    <div class="single-image">
+                        <img src="./images/gallery/gallery_13.jpg" alt="Image 1" />
+                    </div>
+                    <div class="two-images">
+                        <img src="./images/gallery/gallery_14.jpg" alt="Image 2" />
+                        <img src="./images/gallery/gallery_15.jpg" alt="Image 3" />
+                    </div>
+                </div>
+                <!-- 3 in row -->
+                <div class="row-images">
+                    <img src="./images/gallery/gallery_16.jpg" alt="Image 4" />
+                    <img src="./images/gallery/gallery_17.jpg" alt="Image 5" />
+                    <img src="./images/gallery/gallery_18.jpg" alt="Image 6" />
+                </div>
+                    </div>
+                </div>
+            </section>
+            <section class="offers">
+                <div class="container">
+                    <h2 class="section-title">You may also like</h2>
+                    <div class="offers-inner">
+                        <div class="offers-grid">
+                            <div class="product-item">
+                                <p class="product-item-badge">Sale</p>
+                                <div class="product-image">
+                                    <img src="./images/image-to-image.png" alt="Women's Top Product Image">
+                                    <ul class="product-quick-links">
+                                        <li>
+                                            <button type="button" class="quick-link-btn" data-action="compare">
+                                                <img src="./images/icons/compare.svg" alt="Compare" class="quick-link-icon">
+                                                <span class="quick-link-tooltip">Compare</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="quick-link-btn" data-action="quick-view">
+                                                <img src="./images/icons/search.svg" alt="Quick View" class="quick-link-icon">
+                                                <span class="quick-link-tooltip">Quick View</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="quick-link-btn" data-action="wishlist">
+                                                <img src="./images/icons/heart.svg" alt="Add to Wishlist" class="quick-link-icon">
+                                                <span class="quick-link-tooltip">Add to Wishlist</span>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                    <a href="#" class="click-to-more" data-content="click to more">
+                                        <span class="more-text">More Details</span>
+                                    </a>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="product-title">
+                                        <a href="#">Women's Top</a>
+                                    </h3>
+                                    <div class="product-price">
+                                        <div class="product-compare-price">
+                                            <span class="product-currency">£</span>89.99
+                                        </div>
+                                        <div class="product-current-price">
+                                            <span class="product-currency">£</span>49.99
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <p class="product-item-badge">Sale</p>
+                                <div class="product-image">
+                                    <img src="./images/image-to-image.png" alt="Women's Top Product Image">
+                                    <ul class="product-quick-links">
+                                        <li>
+                                            <button type="button" class="quick-link-btn" data-action="compare">
+                                                <img src="./images/icons/compare.svg" alt="Compare" class="quick-link-icon">
+                                                <span class="quick-link-tooltip">Compare</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="quick-link-btn" data-action="quick-view">
+                                                <img src="./images/icons/search.svg" alt="Quick View" class="quick-link-icon">
+                                                <span class="quick-link-tooltip">Quick View</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="quick-link-btn" data-action="wishlist">
+                                                <img src="./images/icons/heart.svg" alt="Add to Wishlist" class="quick-link-icon">
+                                                <span class="quick-link-tooltip">Add to Wishlist</span>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                    <a href="#" class="click-to-more" data-content="click to more">
+                                        <span class="more-text">More Details</span>
+                                    </a>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="product-title">
+                                        <a href="#">Women's Top</a>
+                                    </h3>
+                                    <div class="product-price">
+                                        <div class="product-compare-price">
+                                            <span class="product-currency">£</span>89.99
+                                        </div>
+                                        <div class="product-current-price">
+                                            <span class="product-currency">£</span>49.99
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <p class="product-item-badge">Sale</p>
+                                <div class="product-image">
+                                    <img src="./images/image-to-image.png" alt="Women's Top Product Image">
+                                    <ul class="product-quick-links">
+                                        <li>
+                                            <button type="button" class="quick-link-btn" data-action="compare">
+                                                <img src="./images/icons/compare.svg" alt="Compare" class="quick-link-icon">
+                                                <span class="quick-link-tooltip">Compare</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="quick-link-btn" data-action="quick-view">
+                                                <img src="./images/icons/search.svg" alt="Quick View" class="quick-link-icon">
+                                                <span class="quick-link-tooltip">Quick View</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="quick-link-btn" data-action="wishlist">
+                                                <img src="./images/icons/heart.svg" alt="Add to Wishlist" class="quick-link-icon">
+                                                <span class="quick-link-tooltip">Add to Wishlist</span>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                    <a href="#" class="click-to-more" data-content="click to more">
+                                        <span class="more-text">More Details</span>
+                                    </a>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="product-title">
+                                        <a href="#">Women's Top</a>
+                                    </h3>
+                                    <div class="product-price">
+                                        <div class="product-compare-price">
+                                            <span class="product-currency">£</span>89.99
+                                        </div>
+                                        <div class="product-current-price">
+                                            <span class="product-currency">£</span>49.99
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <p class="product-item-badge">Sale</p>
+                                <div class="product-image">
+                                    <img src="./images/image-to-image.png" alt="Women's Top Product Image">
+                                    <ul class="product-quick-links">
+                                        <li>
+                                            <button type="button" class="quick-link-btn" data-action="compare">
+                                                <img src="./images/icons/compare.svg" alt="Compare" class="quick-link-icon">
+                                                <span class="quick-link-tooltip">Compare</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="quick-link-btn" data-action="quick-view">
+                                                <img src="./images/icons/search.svg" alt="Quick View" class="quick-link-icon">
+                                                <span class="quick-link-tooltip">Quick View</span>
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="quick-link-btn" data-action="wishlist">
+                                                <img src="./images/icons/heart.svg" alt="Add to Wishlist" class="quick-link-icon">
+                                                <span class="quick-link-tooltip">Add to Wishlist</span>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                    <a href="#" class="click-to-more" data-content="click to more">
+                                        <span class="more-text">More Details</span>
+                                    </a>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="product-title">
+                                        <a href="#">Women's Top</a>
+                                    </h3>
+                                    <div class="product-price">
+                                        <div class="product-compare-price">
+                                            <span class="product-currency">£</span>89.99
+                                        </div>
+                                        <div class="product-current-price">
+                                            <span class="product-currency">£</span>49.99
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
     <!-- FOOTER -->
@@ -649,8 +706,8 @@
         </div>
     </footer>
 
-    <!-- Скрипты -->    
-    <script src="./js/modal.js"></script>
+    <!-- Скрипты -->
     <script src="./js/main.js"></script>
+    <script src="./js/modal.js"></script>
 </body>
 </html>

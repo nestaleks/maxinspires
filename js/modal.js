@@ -60,58 +60,7 @@ const SearchModal = {
     }
 };
 
-// 02. Mobile Menu Component
-const MobileMenu = {
-    init() {
-        this.menuBtn = document.querySelector('.menu-btn');
-        this.nav = document.querySelector('nav');
-        this.countrySelector = document.querySelector('.header-country');
-        this.body = document.body;
 
-        if (!this.menuBtn || !this.nav) return;
-        this.setupEventListeners();
-    },
-
-    setupEventListeners() {
-        // Toggle menu
-        this.menuBtn?.addEventListener('click', () => {
-            this.toggleMenu();
-        });
-
-        // Close menu when clicking a link
-        const navLinks = document.querySelectorAll('nav a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                this.closeMenu();
-            });
-        });
-
-        // Close menu on outside click
-        document.addEventListener('click', (e) => {
-            if (this.nav.classList.contains('active') && 
-                !this.nav.contains(e.target) && 
-                !this.menuBtn.contains(e.target)) {
-                this.closeMenu();
-            }
-        });
-    },
-
-    toggleMenu() {
-        this.menuBtn.classList.toggle('active');
-        this.nav.classList.toggle('active');
-        this.countrySelector.classList.toggle('active');
-        this.body.classList.toggle('menu-open');
-    },
-
-    closeMenu() {
-        this.menuBtn.classList.remove('active');
-        this.nav.classList.remove('active');
-        this.countrySelector.classList.remove('active');
-        this.body.classList.remove('menu-open');
-    }
-};
-
-// [Удалено дублирование компонента TabsComponent, так как он уже определен в main.js]
 
 // 03. Tabs Component for Product Page
 const ProductTabs = {
@@ -151,6 +100,5 @@ const ProductTabs = {
 // Initialize all components when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     SearchModal.init();
-    MobileMenu.init();
     ProductTabs.init();
 });
