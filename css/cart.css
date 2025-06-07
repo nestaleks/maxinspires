@@ -305,6 +305,11 @@
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
+.shop-pay-payment img,
+.g-pay-payment img{
+    height: 24px;
+}
+
 .shop-pay-payment{
     background-color: var(--primary-color);
 }
