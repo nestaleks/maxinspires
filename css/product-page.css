@@ -19,8 +19,8 @@
 }
 .slider {
     position: relative;
-    max-width: 600px; 
-    max-height: 600px;
+    max-width: 500px; /* уменьшаем с 600px до 500px */
+    max-height: 500px; /* уменьшаем с 600px до 500px */
     aspect-ratio: 1 / 1;
     margin: 0 auto;
     overflow: hidden;
@@ -609,10 +609,37 @@ svg:nth-child(2) {
     }
 }
 
+/* Адаптивные стили */
+@media (max-width: 1199px) {
+    .product_inner {
+        gap: 30px;
+    }
+    
+    /* Слайдер здесь остается 500x500 */
+}
 
+@media (max-width: 991px) {
+    .product_inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
 
+    .slider {
+        max-width: 600px; /* возвращаем к исходному размеру */
+        max-height: 600px;
+    }
+    
+    /* Остальные стили для планшетов и ниже */
+}
 
-
+@media (max-width: 767px) {
+    /* Стили для мобильных устройств */
+    .slider {
+        max-width: 100%; /* на всю ширину контейнера */
+        max-height: none; /* высота будет определяться aspect-ratio */
+    }
+    /* Остальные стили для мобильных устройств */
+}
 
 .form-control {
     display: block;
