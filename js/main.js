@@ -1,37 +1,136 @@
-// 01. Country Selector Component
-const CountrySelector = {
+// Logger utility
+const Logger = {
+    levels: {
+        INFO: 'info',
+        WARN: 'warn',
+        ERROR: 'error',
+        DEBUG: 'debug'
+    },
+
+    log(level, message, data = {}) {
+        const timestamp = new Date().toISOString();
+        const logEntry = {
+            timestamp,
+            level,
+            message,
+            data
+        };
+
+        // В продакшене можно отправлять логи на сервер
+        if (level === this.levels.ERROR) {
+            this.handleError(logEntry);
+        }
+
+        console[level](`[${timestamp}] ${message}`, data);
+    },
+
+    handleError(errorLog) {
+        // Сохраняем ошибки локально
+        let errors = JSON.parse(localStorage.getItem('app_errors') || '[]');
+        errors.push(errorLog);
+        localStorage.setItem('app_errors', JSON.stringify(errors.slice(-100))); // Храним последние 100 ошибок
+    },
+
+    info(message, data) {
+        this.log(this.levels.INFO, message, data);
+    },
+
+    warn(message, data) {
+        this.log(this.levels.WARN, message, data);
+    },
+
+    error(message, data) {
+        this.log(this.levels.ERROR, message, data);
+    },
+
+    debug(message, data) {
+        this.log(this.levels.DEBUG, message, data);
+    }
+};
+
+// Test Logger initialization
+console.log('Logger initialized:', typeof Logger !== 'undefined');
+Logger.info('Logger system initialized successfully');
+
+// Error handler
+const ErrorHandler = {
     init() {
-        // Получаем все селекторы стран на странице (в шапке и футере)
-        const countrySelectors = document.querySelectorAll('.country-selector');
+        window.addEventListener('error', this.handleGlobalError.bind(this));
+        window.addEventListener('unhandledrejection', this.handlePromiseError.bind(this));
+    },
 
-        // Restore saved country selection
-        this.restoreSavedCountry();
-
-        // Setup event listeners для всех селекторов стран
-        countrySelectors.forEach(selector => {
-            const selectedCountry = selector.querySelector('.selected-country');
-            if (selectedCountry) {
-                this.setupEventListeners(selector, selectedCountry);
-            }
+    handleGlobalError(event) {
+        Logger.error('Global error occurred', {
+            message: event.message,
+            filename: event.filename,
+            lineNo: event.lineno,
+            colNo: event.colno,
+            error: event.error
         });
     },
 
-    restoreSavedCountry() {
-        const selectedCountries = document.querySelectorAll('.selected-country');
-        const savedCountry = localStorage.getItem('selectedCountry');
-        if (savedCountry && selectedCountries.length > 0) {
-            const { flag, name, currency } = JSON.parse(savedCountry);
+    handlePromiseError(event) {
+        Logger.error('Unhandled Promise rejection', {
+            reason: event.reason
+        });
+    }
+};
 
-            // Применяем сохраненную страну ко всем селекторам на странице
-            selectedCountries.forEach(selectedCountry => {
-                const flagImg = selectedCountry.querySelector('img');
-                const countryNameEl = selectedCountry.querySelector('.country-name');
-                const countryCurrencyEl = selectedCountry.querySelector('.country-currency');
+// Initialize error handling
+ErrorHandler.init();
+console.log('ErrorHandler initialized:', typeof ErrorHandler !== 'undefined');
+Logger.info('ErrorHandler system initialized successfully');
 
-                if (flagImg) flagImg.src = flag;
-                if (countryNameEl) countryNameEl.textContent = name;
-                if (countryCurrencyEl) countryCurrencyEl.textContent = currency;
+// 01. Country Selector Component
+const CountrySelector = {
+    init() {
+        try {
+            Logger.info('Initializing CountrySelector');
+            console.log('CountrySelector: Starting initialization');
+            
+            // Получаем все селекторы стран на странице (в шапке и футере)
+            const countrySelectors = document.querySelectorAll('.country-selector');
+            console.log('CountrySelector: Found selectors:', countrySelectors.length);
+
+            // Restore saved country selection
+            this.restoreSavedCountry();
+            
+            // Setup event listeners для всех селекторов стран
+            countrySelectors.forEach(selector => {
+                const selectedCountry = selector.querySelector('.selected-country');
+                if (selectedCountry) {
+                    this.setupEventListeners(selector, selectedCountry);
+                }
             });
+            
+            console.log('CountrySelector: Initialization completed');
+        } catch (error) {
+            Logger.error('Failed to initialize CountrySelector', error);
+            console.error('CountrySelector: Initialization failed:', error);
+        }
+    },
+
+    restoreSavedCountry() {
+        try {
+            const selectedCountries = document.querySelectorAll('.selected-country');
+            const savedCountry = localStorage.getItem('selectedCountry');
+            if (savedCountry && selectedCountries.length > 0) {
+                const { flag, name, currency } = JSON.parse(savedCountry);
+
+                // Применяем сохраненную страну ко всем селекторам на странице
+                selectedCountries.forEach(selectedCountry => {
+                    const flagImg = selectedCountry.querySelector('img');
+                    const countryNameEl = selectedCountry.querySelector('.country-name');
+                    const countryCurrencyEl = selectedCountry.querySelector('.country-currency');
+
+                    if (flagImg) flagImg.src = flag;
+                    if (countryNameEl) countryNameEl.textContent = name;
+                    if (countryCurrencyEl) countryCurrencyEl.textContent = currency;
+                });
+            }
+        } catch (error) {
+            Logger.error('Error restoring saved country:', error);
+            localStorage.removeItem('selectedCountry');
         }
     },
 
@@ -112,18 +211,42 @@ const PhotoSlider = {
     sliderContainer: null,
 
     init() {
-        // Находим слайдер на странице продукта, а не в hero slider
-        this.sliderContainer = document.querySelector('.product-page .slider');
-        if (!this.sliderContainer) return;
+        try {
+            Logger.info('Initializing PhotoSlider');
+            console.log('PhotoSlider: Starting initialization');
+            
+            // Находим слайдер на странице продукта, а не в hero slider
+            this.sliderContainer = document.querySelector('.product-page .slider');
+            console.log('PhotoSlider: Found slider container:', !!this.sliderContainer);
+            
+            if (!this.sliderContainer) {
+                console.log('PhotoSlider: No slider container found, skipping initialization');
+                return;
+            }
 
-        this.slides = this.sliderContainer.querySelectorAll('.slide');
-        this.btnPrev = this.sliderContainer.querySelector('.prev');
-        this.btnNext = this.sliderContainer.querySelector('.next');
+            this.slides = this.sliderContainer.querySelectorAll('.slide');
+            this.btnPrev = this.sliderContainer.querySelector('.prev');
+            this.btnNext = this.sliderContainer.querySelector('.next');
 
-        if (this.slides.length === 0) return;
+            console.log('PhotoSlider: Found elements:', {
+                slides: this.slides.length,
+                prevBtn: !!this.btnPrev,
+                nextBtn: !!this.btnNext
+            });
 
-        this.initSlides();
-        this.setupEventListeners();
+            if (this.slides.length === 0) {
+                console.log('PhotoSlider: No slides found, skipping initialization');
+                return;
+            }
+
+            this.initSlides();
+            this.setupEventListeners();
+            
+            console.log('PhotoSlider: Initialization completed');
+        } catch (error) {
+            Logger.error('Failed to initialize PhotoSlider', error);
+            console.error('PhotoSlider: Initialization failed:', error);
+        }
     },
 
     initSlides() {
@@ -159,15 +282,36 @@ const PhotoSlider = {
 // 03. Quantity Control Component
 const QuantityControl = {
     init() {
-        const quantityContainer = document.querySelector(".quantity");
-        if (!quantityContainer) return;
+        try {
+            Logger.info('Initializing QuantityControl');
+            console.log('QuantityControl: Starting initialization');
+            
+            const quantityContainer = document.querySelector(".quantity");
+            console.log('QuantityControl: Found container:', !!quantityContainer);
+            
+            if (!quantityContainer) {
+                console.log('QuantityControl: No container found, skipping initialization');
+                return;
+            }
 
-        this.minusBtn = quantityContainer.querySelector(".minus");
-        this.plusBtn = quantityContainer.querySelector(".plus");
-        this.inputBox = quantityContainer.querySelector(".input-box");
+            this.minusBtn = quantityContainer.querySelector(".minus");
+            this.plusBtn = quantityContainer.querySelector(".plus");
+            this.inputBox = quantityContainer.querySelector(".input-box");
 
-        this.updateButtonStates();
-        this.setupEventListeners();
+            console.log('QuantityControl: Found elements:', {
+                minusBtn: !!this.minusBtn,
+                plusBtn: !!this.plusBtn,
+                inputBox: !!this.inputBox
+            });
+
+            this.updateButtonStates();
+            this.setupEventListeners();
+            
+            console.log('QuantityControl: Initialization completed');
+        } catch (error) {
+            Logger.error('Failed to initialize QuantityControl', error);
+            console.error('QuantityControl: Initialization failed:', error);
+        }
     },
 
     updateButtonStates() {
@@ -218,35 +362,43 @@ const MobileMenu = {
     },
 
     init() {
-        console.log('MobileMenu: Начало инициализации');
-        // Находим все необходимые элементы
-        this.elements.menuBtn = document.querySelector('.menu-btn');
-        this.elements.nav = document.querySelector('nav');
-        this.elements.countrySelector = document.querySelector('.header-country');
+        try {
+            Logger.info('Initializing MobileMenu');
+            console.log('MobileMenu: Starting initialization');
+            
+            // Находим все необходимые элементы
+            this.elements.menuBtn = document.querySelector('.menu-btn');
+            this.elements.nav = document.querySelector('nav');
+            this.elements.countrySelector = document.querySelector('.header-country');
 
-        console.log('MobileMenu: Найденные элементы:', {
-            menuBtn: this.elements.menuBtn,
-            nav: this.elements.nav,
-            countrySelector: this.elements.countrySelector
-        });
-
-        // Проверяем наличие всех необходимых элементов
-        if (!this.elements.menuBtn || !this.elements.nav || !this.elements.countrySelector) {
-            console.error('MobileMenu: Не найдены необходимые элементы', {
+            console.log('MobileMenu: Found elements:', {
                 menuBtn: !!this.elements.menuBtn,
                 nav: !!this.elements.nav,
                 countrySelector: !!this.elements.countrySelector
             });
-            return;
-        }
 
-        // Создаем оверлей для затемнения фона
-        this.createOverlay();
-        
-        // Инициализируем обработчики событий
-        this.initEventListeners();
-        
-        console.log('MobileMenu: Инициализация завершена успешно');
+            // Проверяем наличие всех необходимых элементов
+            if (!this.elements.menuBtn || !this.elements.nav || !this.elements.countrySelector) {
+                console.warn('MobileMenu: Не найдены необходимые элементы', {
+                    menuBtn: !!this.elements.menuBtn,
+                    nav: !!this.elements.nav,
+                    countrySelector: !!this.elements.countrySelector
+                });
+                return;
+            }
+
+            // Создаем оверлей для затемнения фона
+            this.createOverlay();
+            
+            // Инициализируем обработчики событий
+            this.initEventListeners();
+            
+            Logger.info('MobileMenu initialized successfully');
+            console.log('MobileMenu: Initialization completed');
+        } catch (error) {
+            Logger.error('Failed to initialize MobileMenu', error);
+            console.error('MobileMenu: Initialization failed:', error);
+        }
     },
 
     createOverlay() {
@@ -260,10 +412,10 @@ const MobileMenu = {
     },
 
     initEventListeners() {
-        console.log('MobileMenu: Настройка обработчиков событий');
+        Logger.info('MobileMenu: Настройка обработчиков событий');
         // Обработчик клика по кнопке меню
         this.elements.menuBtn.addEventListener('click', (e) => {
-            console.log('MobileMenu: Клик по кнопке меню');
+            Logger.info('MobileMenu: Клик по кнопке меню');
             e.stopPropagation();
             this.toggleMenu();
         });
@@ -301,7 +453,7 @@ const MobileMenu = {
     },
 
     toggleMenu() {
-        console.log('MobileMenu: toggleMenu вызван');
+        Logger.info('MobileMenu: toggleMenu вызван');
         if (this.isMenuOpen()) {
             this.closeMenu();
         } else {
@@ -310,7 +462,7 @@ const MobileMenu = {
     },
 
     openMenu() {
-        console.log('MobileMenu: Открытие меню');
+        Logger.info('MobileMenu: Открытие меню');
         // Добавляем классы для открытия меню
         this.elements.menuBtn.classList.add('active');
         this.elements.nav.classList.add('active');
@@ -325,12 +477,7 @@ const MobileMenu = {
         // Блокируем скролл
         this.elements.body.style.overflow = 'hidden';
         
-        console.log('MobileMenu: Меню открыто, классы добавлены:', {
-            menuBtnActive: this.elements.menuBtn.classList.contains('active'),
-            navActive: this.elements.nav.classList.contains('active'),
-            countrySelectorActive: this.elements.countrySelector.classList.contains('active'),
-            bodyMenuOpen: this.elements.body.classList.contains('menu-open')
-        });
+        Logger.info('MobileMenu: Меню открыто');
     },
 
     closeMenu() {
@@ -348,7 +495,7 @@ const MobileMenu = {
         // Разблокируем скролл
         this.elements.body.style.overflow = '';
         
-        console.log('MobileMenu: Меню закрыто');
+        Logger.info('MobileMenu: Меню закрыто');
     },
 
     isMenuOpen() {
@@ -359,7 +506,17 @@ const MobileMenu = {
 // 04. Navigation Component
 const Navigation = {
     init() {
-        this.setActiveMenuItem();
+        try {
+            Logger.info('Initializing Navigation');
+            console.log('Navigation: Starting initialization');
+            
+            this.setActiveMenuItem();
+            
+            console.log('Navigation: Initialization completed');
+        } catch (error) {
+            Logger.error('Failed to initialize Navigation', error);
+            console.error('Navigation: Initialization failed:', error);
+        }
     },
 
     setActiveMenuItem() {
@@ -387,19 +544,35 @@ const Navigation = {
 // 05. Checkout Process Component
 const CheckoutProcess = {
     init() {
-        console.log('Инициализация компонента CheckoutProcess');
-        // Получаем все необходимые элементы
-        this.progressSteps = document.querySelectorAll('.progress-step');
-        this.checkoutSections = document.querySelectorAll('.checkout-section');
-        this.continueButtons = document.querySelectorAll('.continue-button');
-        this.backButtons = document.querySelectorAll('.back-button');
+        try {
+            Logger.info('Initializing CheckoutProcess');
+            console.log('CheckoutProcess: Starting initialization');
+            
+            // Получаем все необходимые элементы
+            this.progressSteps = document.querySelectorAll('.progress-step');
+            this.checkoutSections = document.querySelectorAll('.checkout-section');
+            this.continueButtons = document.querySelectorAll('.continue-button');
+            this.backButtons = document.querySelectorAll('.back-button');
 
-        // Инициализация, если элементы найдены
-        if (this.progressSteps.length > 0 && this.checkoutSections.length > 0) {
-            console.log('Элементы найдены, настраиваем обработчики событий');
-            this.setupEventListeners();
-        } else {
-            console.warn('Элементы не найдены для CheckoutProcess');
+            console.log('CheckoutProcess: Found elements:', {
+                progressSteps: this.progressSteps.length,
+                checkoutSections: this.checkoutSections.length,
+                continueButtons: this.continueButtons.length,
+                backButtons: this.backButtons.length
+            });
+
+            // Инициализация, если элементы найдены
+            if (this.progressSteps.length > 0 && this.checkoutSections.length > 0) {
+                console.log('CheckoutProcess: Elements found, setting up event listeners');
+                this.setupEventListeners();
+            } else {
+                console.log('CheckoutProcess: Elements not found, skipping initialization');
+            }
+            
+            console.log('CheckoutProcess: Initialization completed');
+        } catch (error) {
+            Logger.error('Failed to initialize CheckoutProcess', error);
+            console.error('CheckoutProcess: Initialization failed:', error);
         }
     },
 
@@ -488,14 +661,29 @@ const CheckoutProcess = {
 // Tabs functionality
 const TabsComponent = {
     init() {
-        const tabs = document.querySelectorAll('.tabs_item_link');
-        const tabContents = document.querySelectorAll('.tabcontents > div');
-        
-        // Восстанавливаем сохраненный таб или показываем первый
-        this.restoreSelectedTab(tabs, tabContents);
-        
-        // Устанавливаем обработчики событий
-        this.setupEventListeners(tabs, tabContents);
+        try {
+            Logger.info('Initializing TabsComponent');
+            console.log('TabsComponent: Starting initialization');
+            
+            const tabs = document.querySelectorAll('.tabs_item_link');
+            const tabContents = document.querySelectorAll('.tabcontents > div');
+            
+            console.log('TabsComponent: Found elements:', {
+                tabs: tabs.length,
+                tabContents: tabContents.length
+            });
+            
+            // Восстанавливаем сохраненный таб или показываем первый
+            this.restoreSelectedTab(tabs, tabContents);
+            
+            // Устанавливаем обработчики событий
+            this.setupEventListeners(tabs, tabContents);
+            
+            console.log('TabsComponent: Initialization completed');
+        } catch (error) {
+            Logger.error('Failed to initialize TabsComponent', error);
+            console.error('TabsComponent: Initialization failed:', error);
+        }
     },
 
     restoreSelectedTab(tabs, tabContents) {
@@ -537,136 +725,252 @@ const TabsComponent = {
     }
 };
 
-// Функционал корзины
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOMContentLoaded: Начало инициализации компонентов');
-    
-    // Инициализируем мобильное меню первым
-    if (typeof MobileMenu !== 'undefined') {
-        console.log('DOMContentLoaded: Инициализация MobileMenu');
-        MobileMenu.init();
-    }
+// Performance optimization utilities
+const PerformanceOptimizer = {
+    init() {
+        this.initLazyLoading();
+        this.initScriptLoader();
+    },
 
-    // Инициализируем другие компоненты
-    if (typeof CountrySelector !== 'undefined') CountrySelector.init();
-    if (typeof PhotoSlider !== 'undefined') PhotoSlider.init();
-    if (typeof QuantityControl !== 'undefined') QuantityControl.init();
-    if (typeof Navigation !== 'undefined') Navigation.init();
-    if (typeof ProductSlider !== 'undefined') ProductSlider.init();
-    if (typeof TabsComponent !== 'undefined') TabsComponent.init();
-    if (typeof initializeCart === 'function') initializeCart();
-    if (typeof SearchModal !== 'undefined') SearchModal.init();
+    initLazyLoading() {
+        if ('loading' in HTMLImageElement.prototype) {
+            // Используем нативную ленивую загрузку
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                img.src = img.dataset.src;
+                img.loading = 'lazy';
+            });
+        } else {
+            // Fallback для старых браузеров
+            this.initIntersectionObserver();
+        }
+    },
 
-    // Загрузка изображений слайдера и предварительная проверка
-    const preloadSliderImages = () => {
-        const slider = document.querySelector('.hero-slider .custom-slider');
-        if (!slider) return;
+    initIntersectionObserver() {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    observer.unobserve(img);
+                }
+            });
+        });
 
-        const slides = slider.querySelectorAll('.slide');
-        if (!slides.length) return;
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    },
 
-        // Добавляем индикатор загрузки
-        const loadingIndicator = document.createElement('div');
-        loadingIndicator.className = 'slider-loading';
-        loadingIndicator.innerHTML = `
-            <div class="loading-spinner"></div>
-            <div class="loading-text">Загрузка слайдера...</div>
-        `;
-        slider.appendChild(loadingIndicator);
-
-        let loadedCount = 0;
-        const totalImages = slides.length;
-
-        // Функция для обновления прогресса загрузки
-        const updateProgress = () => {
-            const percent = Math.round((loadedCount / totalImages) * 100);
-            loadingIndicator.querySelector('.loading-text').textContent = `Загрузка: ${percent}%`;
-        };
-
-        // Функция для завершения загрузки
-        const finishLoading = () => {
-            // Небольшая задержка для плавности
+    initScriptLoader() {
+        // Откладываем загрузку неважных скриптов
+        window.addEventListener('load', () => {
             setTimeout(() => {
-                loadingIndicator.classList.add('fade-out');
-                setTimeout(() => {
-                    loadingIndicator.remove();
-                    initializeSlider();
-                }, 500);
-            }, 300);
+                this.loadDeferredScripts();
+            }, 2000);
+        });
+    },
+
+    loadDeferredScripts() {
+        const deferredScripts = [
+            // Список скриптов для отложенной загрузки
+            { src: './js/analytics.js', async: true },
+            { src: './js/social-widgets.js', async: true }
+        ];
+
+        deferredScripts.forEach(script => {
+            const scriptElement = document.createElement('script');
+            scriptElement.src = script.src;
+            if (script.async) scriptElement.async = true;
+            document.body.appendChild(scriptElement);
+        });
+    }
+};
+
+// Cart initialization function
+function initializeCart() {
+    try {
+        Logger.info('Initializing cart functionality');
+        
+        // Инициализация корзины
+        const cartItems = JSON.parse(localStorage.getItem('cart') || '[]');
+        updateCartCount(cartItems.length);
+        
+        // Обработчики для кнопок "Add to Cart"
+        document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                addToCart(btn);
+            });
+        });
+        
+    } catch (error) {
+        Logger.error('Failed to initialize cart', error);
+    }
+}
+
+// Update cart count in header
+function updateCartCount(count) {
+    const cartCountElements = document.querySelectorAll('.cart-count');
+    cartCountElements.forEach(el => {
+        el.textContent = count;
+        el.style.display = count > 0 ? 'block' : 'none';
+    });
+}
+
+// Add item to cart
+function addToCart(button) {
+    try {
+        const productCard = button.closest('.product-item');
+        if (!productCard) return;
+        
+        const productId = productCard.dataset.productId || Date.now().toString();
+        const productName = productCard.querySelector('.product-title a')?.textContent || 'Product';
+        const productPrice = productCard.querySelector('.product-current-price')?.textContent || '0';
+        const productImage = productCard.querySelector('.product-image img')?.src || '';
+        
+        const cartItem = {
+            id: productId,
+            name: productName,
+            price: productPrice,
+            image: productImage,
+            quantity: 1
         };
+        
+        let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+        
+        // Проверяем, есть ли уже такой товар в корзине
+        const existingItem = cart.find(item => item.id === productId);
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            cart.push(cartItem);
+        }
+        
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount(cart.length);
+        
+        // Показываем уведомление
+        showNotification('Product added to cart!');
+        
+    } catch (error) {
+        Logger.error('Failed to add item to cart', error);
+    }
+}
 
-        // Проверяем загрузку всех изображений
-        slides.forEach(slide => {
-            const img = slide.querySelector('img');
-            if (!img) {
-                loadedCount++;
-                updateProgress();
-                if (loadedCount === totalImages) finishLoading();
-                return;
-            }
+// Show notification
+function showNotification(message) {
+    const notification = document.createElement('div');
+    notification.className = 'notification';
+    notification.textContent = message;
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #4CAF50;
+        color: white;
+        padding: 15px 20px;
+        border-radius: 5px;
+        z-index: 10000;
+        animation: slideIn 0.3s ease;
+    `;
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.remove();
+    }, 3000);
+}
 
-            if (img.complete) {
-                loadedCount++;
-                updateProgress();
-                if (loadedCount === totalImages) finishLoading();
+// Preload slider images
+function preloadSliderImages() {
+    try {
+        Logger.info('Preloading slider images');
+        
+        const sliderImages = document.querySelectorAll('.slider img, .product-slider img');
+        const imagePromises = Array.from(sliderImages).map(img => {
+            return new Promise((resolve, reject) => {
+                if (img.complete) {
+                    resolve();
+                } else {
+                    img.onload = resolve;
+                    img.onerror = reject;
+                }
+            });
+        });
+        
+        Promise.all(imagePromises)
+            .then(() => Logger.info('All slider images preloaded'))
+            .catch(error => Logger.error('Failed to preload some images', error));
+            
+    } catch (error) {
+        Logger.error('Failed to preload slider images', error);
+    }
+}
+
+// Инициализируем оптимизатор после загрузки основного контента
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM Content Loaded - Starting application initialization');
+    Logger.info('DOM Content Loaded - Starting application initialization');
+    
+    PerformanceOptimizer.init();
+    
+    try {
+        Logger.info('Application initialization started');
+        
+        // Initialize components
+        const components = [MobileMenu, CountrySelector, PhotoSlider, QuantityControl, Navigation, TabsComponent];
+        Logger.info('Components to initialize:', components.map(c => c.constructor.name || 'Anonymous'));
+        
+        components.forEach((component, index) => {
+            if (typeof component !== 'undefined' && component.init) {
+                try {
+                    Logger.info(`Initializing component ${index + 1}/${components.length}`);
+                    component.init();
+                    Logger.info(`Component ${index + 1} initialized successfully`);
+                } catch (error) {
+                    Logger.error(`Failed to initialize component ${index + 1}`, { 
+                        component: component.constructor.name || 'Anonymous',
+                        error 
+                    });
+                }
             } else {
-                img.addEventListener('load', () => {
-                    loadedCount++;
-                    updateProgress();
-                    if (loadedCount === totalImages) finishLoading();
-                });
-
-                img.addEventListener('error', () => {
-                    console.error(`Ошибка загрузки изображения: ${img.src}`);
-                    loadedCount++;
-                    updateProgress();
-                    if (loadedCount === totalImages) finishLoading();
-                });
+                Logger.warn(`Component ${index + 1} is undefined or missing init method`);
             }
         });
 
-        // Устанавливаем таймаут на случай, если что-то пойдет не так
-        setTimeout(() => {
-            if (loadedCount < totalImages) {
-                console.warn('Превышено время ожидания загрузки изображений');
-                finishLoading();
+        if (typeof initializeCart === 'function') {
+            try {
+                Logger.info('Initializing cart functionality');
+                initializeCart();
+                Logger.info('Cart functionality initialized successfully');
+            } catch (error) {
+                Logger.error('Failed to initialize cart', error);
             }
-        }, 10000); // 10 секунд максимум
-    };
-
-    // Инициализация слайдера
-    const initializeSlider = () => {
-        // Инициализируем слайдер только после загрузки всех изображений
-
-        // Добавляем прямые обработчики на кнопки слайдера для надежности
-        const prevBtn = document.querySelector('.hero-slider .prev-btn');
-        const nextBtn = document.querySelector('.hero-slider .next-btn');
-        const indicators = document.querySelectorAll('.hero-slider .indicator');
-
-        if (prevBtn) {
-            prevBtn.addEventListener('click', () => {
-                HeroSlider.goToSlide(HeroSlider.currentIndex - 1, 'prev');
-            });
         }
 
-        if (nextBtn) {
-            nextBtn.addEventListener('click', () => {
-                HeroSlider.goToSlide(HeroSlider.currentIndex + 1, 'next');
-            });
+        // Initialize slider
+        try {
+            Logger.info('Preloading slider images');
+            preloadSliderImages();
+            Logger.info('Slider images preloaded successfully');
+        } catch (error) {
+            Logger.error('Failed to preload slider images', error);
         }
 
-        if (indicators && indicators.length > 0) {
-            indicators.forEach((indicator, index) => {
-                indicator.addEventListener('click', () => {
-                    HeroSlider.goToSlide(index);
-                });
-            });
+        if (typeof CheckoutProcess !== 'undefined') {
+            try {
+                Logger.info('Initializing CheckoutProcess');
+                CheckoutProcess.init();
+                Logger.info('CheckoutProcess initialized successfully');
+            } catch (error) {
+                Logger.error('Failed to initialize CheckoutProcess', error);
+            }
         }
-    };
 
-    // Запускаем предзагрузку изображений слайдера
-    preloadSliderImages();
-    if (typeof CheckoutProcess !== 'undefined') CheckoutProcess.init();
-    
-    console.log('DOMContentLoaded: Инициализация компонентов завершена');
+        Logger.info('Application initialization completed');
+        console.log('Application initialization completed successfully');
+    } catch (error) {
+        Logger.error('Critical error during application initialization', error);
+        console.error('Critical error during application initialization:', error);
+    }
 });

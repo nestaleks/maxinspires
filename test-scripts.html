@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Scripts</title>
+</head>
+<body>
+    <h1>Test Scripts</h1>
+    
+    <!-- Test elements for CountrySelector -->
+    <div class="country-selector">
+        <div class="selected-country">
+            <img src="https://flagcdn.com/w20/gb.png" alt="GB" class="country-flag">
+            <span class="country-name">United Kingdom</span>
+            <span class="country-currency">GBP</span>
+            <span class="dropdown-arrow">▼</span>
+        </div>
+        <ul class="country-dropdown">
+            <li data-country="gb" data-currency="GBP">
+                <img src="https://flagcdn.com/w20/gb.png" alt="GB">
+                <span class="country-name">United Kingdom</span>
+                <span class="country-currency">GBP</span>
+            </li>
+            <li data-country="de" data-currency="EUR">
+                <img src="https://flagcdn.com/w20/de.png" alt="DE">
+                <span class="country-name">Germany</span>
+                <span class="country-currency">EUR</span>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Test elements for MobileMenu -->
+    <button class="menu-btn">Menu</button>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+    </nav>
+    <div class="header-country">
+        <div class="country-selector">
+            <div class="selected-country">
+                <img src="https://flagcdn.com/w20/gb.png" alt="GB">
+                <span class="country-name">UK</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Test elements for PhotoSlider -->
+    <div class="product-page">
+        <div class="slider">
+            <div class="slide">Slide 1</div>
+            <div class="slide">Slide 2</div>
+            <button class="prev">Previous</button>
+            <button class="next">Next</button>
+        </div>
+    </div>
+
+    <!-- Test elements for QuantityControl -->
+    <div class="quantity">
+        <button class="minus">-</button>
+        <input type="number" class="input-box" value="1" min="1" max="10">
+        <button class="plus">+</button>
+    </div>
+
+    <!-- Test elements for cart -->
+    <div class="product-item" data-product-id="test-1">
+        <h3 class="product-title"><a href="#">Test Product</a></h3>
+        <div class="product-current-price">$10.00</div>
+        <div class="product-image"><img src="test.jpg" alt="Test"></div>
+        <button class="add-to-cart-btn">Add to Cart</button>
+    </div>
+
+    <div class="cart-count">0</div>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/modal.js"></script>
+    
+    <script>
+        // Additional test script
+        console.log('Test page loaded');
+        
+        // Check if components are defined
+        console.log('CountrySelector defined:', typeof CountrySelector !== 'undefined');
+        console.log('MobileMenu defined:', typeof MobileMenu !== 'undefined');
+        console.log('PhotoSlider defined:', typeof PhotoSlider !== 'undefined');
+        console.log('QuantityControl defined:', typeof QuantityControl !== 'undefined');
+        console.log('Logger defined:', typeof Logger !== 'undefined');
+        
+        // Test Logger
+        if (typeof Logger !== 'undefined') {
+            Logger.info('Test message from test page');
+        }
+    </script>
+</body>
+</html> 
