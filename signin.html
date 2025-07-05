@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Maxinspires</title>
+    <link rel="stylesheet" href="./app.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <button class="menu-btn" aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="logo">
+                    <img src="./images/logo.jpg" alt="">
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="./index.html" class="active">Home</a></li>
+                        <li><a href="./catalog.html">Catalog</a></li>
+                        <li><a href="./special-offer.html">Special Offer</a></li>
+                        <li><a href="./contact.html">Contact</a></li>
+                        <li><a href="./about.html">About</a></li>
+                    </ul>
+                </nav>
+                <div class="header-country">
+                    <div class="country-selector">
+                        <div class="selected-country">
+                            <img src="https://flagcdn.com/w20/gb.png" alt="GB" class="country-flag">
+                            <span class="country-name">United Kingdom</span>
+                            <span class="country-currency">GBP</span>
+                            <span class="dropdown-arrow">▼</span>
+                        </div>
+                        <ul class="country-dropdown">
+                            <li data-country="gb" data-currency="GBP">
+                                <img src="https://flagcdn.com/w20/gb.png" alt="GB">
+                                <span class="country-name">United Kingdom</span>
+                                <span class="country-currency">GBP</span>
+                            </li>
+                            <li data-country="de" data-currency="EUR">
+                                <img src="https://flagcdn.com/w20/de.png" alt="DE">
+                                <span class="country-name">Germany</span>
+                                <span class="country-currency">EUR</span>
+                            </li>
+                            <li data-country="fr" data-currency="EUR">
+                                <img src="https://flagcdn.com/w20/fr.png" alt="FR">
+                                <span class="country-name">France</span>
+                                <span class="country-currency">EUR</span>
+                            </li>
+                            <li data-country="it" data-currency="EUR">
+                                <img src="https://flagcdn.com/w20/it.png" alt="IT">
+                                <span class="country-name">Italy</span>
+                                <span class="country-currency">EUR</span>
+                            </li>
+                            <li data-country="es" data-currency="EUR">
+                                <img src="https://flagcdn.com/w20/es.png" alt="ES">
+                                <span class="country-name">Spain</span>
+                                <span class="country-currency">EUR</span>
+                            </li>
+                            <li data-country="nl" data-currency="EUR">
+                                <img src="https://flagcdn.com/w20/nl.png" alt="NL">
+                                <span class="country-name">Netherlands</span>
+                                <span class="country-currency">EUR</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <div class="header-search">
+                        <button class="search-trigger" aria-label="Open search">
+                            <img src="./images/icons/search.svg" alt="">
+                        </button>
+                    </div>
+                    <div class="search-modal">
+                        <div class="search-modal-inner">
+                            <div class="container">
+                                <form class="search-form" action="#" method="GET">
+                                    <input type="text" name="search" placeholder="Search..." autocomplete="off">
+                                    <button type="submit" aria-label="Search">
+                                        <img src="./images/icons/search.svg" alt="">
+                                    </button>
+                                </form>
+                                <button class="search-close" aria-label="Close search">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-cart">
+                        <a href="./cart.html" class="cart-trigger" aria-label="Open cart">
+                            <img src="./images/icons/cart.svg" alt="">
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="signin-page">
+        <div class="auth-container">
+            <div class="auth-block auth-block--left">
+                <!-- Login Form (default) -->
+                <form class="auth-form auth-form--login" autocomplete="on">
+                    <h2 class="auth-title">Sign In</h2>
+                    <div class="auth-field">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" name="email" required autocomplete="email">
+                    </div>
+                    <div class="auth-field">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" name="password" required autocomplete="current-password">
+                    </div>
+                    <div class="auth-options">
+                        <label class="remember-me">
+                            <input type="checkbox" name="remember">
+                            <p>Remember me</p>
+                        </label>
+                        <a href="#" class="forgot-link">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="btn btn-secondary">Sign In</button>
+                    <div class="auth-switch">
+                        <span>Don't have an account?</span>
+                        <a href="#" class="switch-to-register">Register</a>
+                    </div>
+                </form>
+                <!-- Registration Form (hidden by default) -->
+                <form class="auth-form auth-form--register" autocomplete="on" style="display:none;">
+                    <h2 class="auth-title">Create Account</h2>
+                    <div class="auth-field">
+                        <label for="register-name">Full Name</label>
+                        <input type="text" id="register-name" name="name" required autocomplete="name">
+                    </div>
+                    <div class="auth-field">
+                        <label for="register-email">Email</label>
+                        <input type="email" id="register-email" name="email" required autocomplete="email">
+                    </div>
+                    <div class="auth-field">
+                        <label for="register-password">Password</label>
+                        <input type="password" id="register-password" name="password" required autocomplete="new-password">
+                    </div>
+                    <div class="auth-field">
+                        <label for="register-password2">Repeat Password</label>
+                        <input type="password" id="register-password2" name="password2" required autocomplete="new-password">
+                    </div>
+                    <div class="auth-field auth-field--verify">
+                        <label for="register-code">Verification Code</label>
+                        <div class="verify-row">
+                            <input type="text" id="register-code" name="code" maxlength="6" pattern="[0-9]{6}" required placeholder="6-digit code">
+                            <button type="button" class="btn btn-secondary send-code">Send Code</button>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-secondary">Register</button>
+                    <div class="auth-switch">
+                        <span>Already have an account?</span>
+                        <a href="#" class="switch-to-login">Sign In</a>
+                    </div>
+                </form>
+                <!-- Forgot Password Form (hidden by default) -->
+                <form class="auth-form auth-form--forgot" autocomplete="on" style="display:none;">
+                    <h2 class="auth-title">Forgot Password</h2>
+                    <div class="auth-field">
+                        <label for="forgot-email">Email</label>
+                        <input type="email" id="forgot-email" name="email" required autocomplete="email">
+                    </div>
+                    <button type="submit" class="btn btn-secondary">Send Reset Link</button>
+                    <div class="auth-switch">
+                        <a href="#" class="switch-to-login">Back to Sign In</a>
+                    </div>
+                </form>
+            </div>
+            <div class="auth-block auth-block--right">
+                <!-- Info for login/registration/forgot, switches with animation -->
+                <div class="auth-info auth-info--login">
+                    <h3>Welcome Back!</h3>
+                    <p>Sign in to access your account, view your orders, and enjoy exclusive offers.</p>
+                </div>
+                <div class="auth-info auth-info--register" style="display:none;">
+                    <h3>Join Maxinspires!</h3>
+                    <p>Create an account to track your orders, save favorites, and get early access to new collections.</p>
+                </div>
+                <div class="auth-info auth-info--forgot" style="display:none;">
+                    <h3>Forgot your password?</h3>
+                    <p>Enter your email and we'll send you a link to reset your password. Don't worry, it happens!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <section class="newsletter-section special-offer-newsletter">
+            <div class="container">
+                <div class="newsletter-inner">
+                    <div class="newsletter-content">
+                        <h2 class="newsletter-title">Get Early Access to Offers</h2>
+                        <p class="newsletter-text">Subscribe to our newsletter to receive exclusive offers and early access to sales before anyone else.</p>
+                    </div>
+                    <form class="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="newsletter-consent">
+                            <label for="newsletter-consent">I agree to receive promotional emails from Maxinspires</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-banners">
+                    <div class="footer-country">
+                        <div class="country-selector">
+                            <div class="selected-country">
+                                <img src="https://flagcdn.com/w20/gb.png" alt="GB" class="country-flag">
+                                <span class="country-name">United Kingdom</span>
+                                <span class="country-currency">GBP</span>
+                                <span class="dropdown-arrow">▼</span>
+                            </div>
+                            <ul class="country-dropdown">
+                                <li data-country="gb" data-currency="GBP">
+                                    <img src="https://flagcdn.com/w20/gb.png" alt="GB">
+                                    <span class="country-name">United Kingdom</span>
+                                    <span class="country-currency">GBP</span>
+                                </li>
+                                <li data-country="de" data-currency="EUR">
+                                    <img src="https://flagcdn.com/w20/de.png" alt="DE">
+                                    <span class="country-name">Germany</span>
+                                    <span class="country-currency">EUR</span>
+                                </li>
+                                <li data-country="fr" data-currency="EUR">
+                                    <img src="https://flagcdn.com/w20/fr.png" alt="FR">
+                                    <span class="country-name">France</span>
+                                    <span class="country-currency">EUR</span>
+                                </li>
+                                <li data-country="it" data-currency="EUR">
+                                    <img src="https://flagcdn.com/w20/it.png" alt="IT">
+                                    <span class="country-name">Italy</span>
+                                    <span class="country-currency">EUR</span>
+                                </li>
+                                <li data-country="es" data-currency="EUR">
+                                    <img src="https://flagcdn.com/w20/es.png" alt="ES">
+                                    <span class="country-name">Spain</span>
+                                    <span class="country-currency">EUR</span>
+                                </li>
+                                <li data-country="nl" data-currency="EUR">
+                                    <img src="https://flagcdn.com/w20/nl.png" alt="NL">
+                                    <span class="country-name">Netherlands</span>
+                                    <span class="country-currency">EUR</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-payments">
+                        <img src="./images/icons/visa.svg" alt="Visa">
+                        <img src="./images/icons/mastercard.svg" alt="MasterCard">
+                        <img src="./images/icons/paypal.svg" alt="PayPal">
+                        <img src="./images/icons/amex.svg" alt="American Express">
+                    </div>
+                </div>
+                <div class="footer-bottom-rights">
+                    <p>2024, Maxinspires</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Скрипты -->
+    <script src="./js/main.js"></script>
+    <script src="./js/modal.js"></script>
+    <script>
+    // Переключение между формами с анимацией
+    document.addEventListener('DOMContentLoaded', function() {
+        const loginForm = document.querySelector('.auth-form--login');
+        const registerForm = document.querySelector('.auth-form--register');
+        const forgotForm = document.querySelector('.auth-form--forgot');
+        const loginInfo = document.querySelector('.auth-info--login');
+        const registerInfo = document.querySelector('.auth-info--register');
+        const forgotInfo = document.querySelector('.auth-info--forgot');
+        const toRegister = document.querySelector('.switch-to-register');
+        const toLogin = document.querySelectorAll('.switch-to-login');
+        const toForgot = document.querySelector('.forgot-link');
+
+        function hideAllForms() {
+            [loginForm, registerForm, forgotForm].forEach(f => {
+                if (f) {
+                    f.classList.add('hide');
+                }
+            });
+            [loginInfo, registerInfo, forgotInfo].forEach(i => {
+                if (i) {
+                    i.classList.add('hide');
+                }
+            });
+        }
+        function showRegister() {
+            hideAllForms();
+            setTimeout(() => {
+                [loginForm, forgotForm].forEach(f => { if (f) { f.style.display = 'none'; } });
+                [loginInfo, forgotInfo].forEach(i => { if (i) { i.style.display = 'none'; } });
+                registerForm.style.display = '';
+                registerInfo.style.display = '';
+                registerForm.classList.remove('hide');
+                registerInfo.classList.remove('hide');
+                registerForm.classList.add('show');
+                registerInfo.classList.add('show');
+            }, 400);
+        }
+        function showLogin() {
+            hideAllForms();
+            setTimeout(() => {
+                [registerForm, forgotForm].forEach(f => { if (f) { f.style.display = 'none'; } });
+                [registerInfo, forgotInfo].forEach(i => { if (i) { i.style.display = 'none'; } });
+                loginForm.style.display = '';
+                loginInfo.style.display = '';
+                loginForm.classList.remove('hide');
+                loginInfo.classList.remove('hide');
+                loginForm.classList.add('show');
+                loginInfo.classList.add('show');
+            }, 400);
+        }
+        function showForgot() {
+            hideAllForms();
+            setTimeout(() => {
+                [loginForm, registerForm].forEach(f => { if (f) { f.style.display = 'none'; } });
+                [loginInfo, registerInfo].forEach(i => { if (i) { i.style.display = 'none'; } });
+                forgotInfo.style.display = '';
+                forgotForm.style.display = '';
+                forgotForm.classList.remove('hide');
+                forgotInfo.classList.remove('hide');
+                forgotForm.classList.add('show');
+                forgotInfo.classList.add('show');
+            }, 400);
+        }
+        toRegister.addEventListener('click', function(e) {
+            e.preventDefault();
+            showRegister();
+        });
+        toForgot.addEventListener('click', function(e) {
+            e.preventDefault();
+            showForgot();
+        });
+        toLogin.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                showLogin();
+            });
+        });
+    });
+    </script>
+</body>
+</html>
