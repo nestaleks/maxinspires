@@ -57,7 +57,7 @@
 }
 
 .value-title {
-    font-size: 1.2rem;
+    font-size: 20px;
     margin-bottom: 15px;
     font-weight: 600;
 }
@@ -92,7 +92,7 @@
 }
 
 .member-name {
-    font-size: 1.3rem;
+    font-size: 20px;
     margin-bottom: 5px;
     font-weight: 600;
 }
@@ -132,7 +132,7 @@
     margin-bottom: 20px;
     font-style: italic;
     color: var(--text-color);
-    font-size: 1.1rem;
+    font-size: 18px;
     line-height: 1.7;
     position: relative;
     padding: 0 20px;
@@ -141,7 +141,7 @@
 .testimonial-quote::before,
 .testimonial-quote::after {
     content: '"';
-    font-size: 2rem;
+    font-size: 32px;
     color: var(--primary-color);
     opacity: 0.5;
 }
@@ -166,7 +166,7 @@
 
 .author-name {
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 18px;
 }
 
 .author-location {
@@ -176,7 +176,7 @@
 
 .rating .star {
     color: #ccc;
-    font-size: 1.3rem;
+    font-size: 20px;
 }
 
 .rating .star.filled {
@@ -196,13 +196,13 @@
 }
 
 .cta-title {
-    font-size: 2.5rem;
+    font-size: 40px;
     margin-bottom: 15px;
     font-weight: 700;
 }
 
 .cta-text {
-    font-size: 1.2rem;
+    font-size: 20px;
     margin-bottom: 30px;
     opacity: 0.9;
     max-width: 600px;
@@ -239,7 +239,7 @@
     }
 
     .cta-title {
-        font-size: 2rem;
+        font-size: 32px;
     }
 }
 
