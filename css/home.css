@@ -99,7 +99,7 @@
 .collection-item {
     position: relative;
     border-radius: 4px;
-    background: #fff;
+    background: var(--white);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     aspect-ratio: 1 / 1;
@@ -169,7 +169,7 @@
 .product-item {
     position: relative;
     border-radius: 10px;
-    border: 1px solid #ebebeb;
+    border: 1px solid var(--gray);
     overflow: hidden;
     transition: box-shadow 0.3s ease;
 }
@@ -184,7 +184,7 @@
     top: 10px;
     left: 10px;
     margin: 0;
-    color: #ffffff;
+    color: var(--white);
     font-size: 14px;
     font-weight: 600;
     padding: 5px 12px;
@@ -223,7 +223,7 @@
     height: 35px;
     border: none;
     border-radius: 50%;
-    background: white;
+    background: var(--white);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -308,7 +308,7 @@
 }
 
 .product-title a {
-    color: #333;
+    color: var(--text-color);
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -325,7 +325,7 @@
 }
 
 .product-compare-price {
-    color: #8a8a8a;
+    color: var(--dark-gray);
     text-decoration: line-through;
     font-size: 14px;
 }
@@ -348,7 +348,7 @@
     align-items: center;
     margin: 20px auto 0;
     border-radius: 10px;
-    border: 1px solid #ebebeb;
+    border: 1px solid var(--gray);
     background-color: transparent;
     padding: 10px;
     cursor: pointer;

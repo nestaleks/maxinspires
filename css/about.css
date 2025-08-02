@@ -27,7 +27,7 @@
 }
 
 .value-card {
-    background: white;
+    background: var(--white);
     padding: 20px;
     border-radius: var(--radius);
     text-align: center;
@@ -69,7 +69,7 @@
 }
 
 .team-member {
-    background: white;
+    background: var(--white);
     border-radius: var(--radius);
     overflow: hidden;
     box-shadow: var(--shadow);
@@ -122,7 +122,7 @@
 }
 
 .testimonial-item {
-    background: white;
+    background: var(--white);
     border-radius: var(--radius);
     padding: 30px;
     box-shadow: var(--shadow);
@@ -175,7 +175,7 @@
 }
 
 .rating .star {
-    color: #ccc;
+    color: var(--gray);
     font-size: 20px;
 }
 
@@ -192,7 +192,7 @@
     padding: 60px;
     border-radius: var(--radius);
     text-align: center;
-    color: white;
+    color: var(--white);
 }
 
 .cta-title {

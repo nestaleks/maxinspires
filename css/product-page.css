@@ -137,12 +137,12 @@ button .fas{
     border-radius: 5px;
 }
 .size-choose input[type="radio"] + label span {
-    border: 2px solid #FFFFFF;
+    border: 2px solid var(--white);
     box-shadow: 0 1px 3px 0 rgba(0,0,0,0.33);
 }
 .size-choose input[type="radio"]:checked + label span {
     border: 2px solid var(--primary-color);
-    color: #ffffff;
+    color: var(--white);
     background-color: var(--primary-color);
 }
 /*COLOR CHOOSE*/
@@ -174,7 +174,7 @@ button .fas{
 }
 
 .color-choose input[type="radio"] + label span {
-    border: 2px solid #FFFFFF;
+    border: 2px solid var(--white);
     box-shadow: 0 1px 3px 0 rgba(0,0,0,0.33);
 }
 
@@ -185,7 +185,7 @@ button .fas{
     background-color: #fbf000;
 }
 .color-choose input[type="radio"]#white + label span {
-    background-color: #ffffff;
+    background-color: var(--white);
 }
 
 .color-choose input[type="radio"]:checked + label span {
@@ -211,7 +211,7 @@ button .fas{
 
 .quantity button {
     background-color: var(--dark-gray);
-    color: #fff;
+    color: var(--white);
     cursor: pointer;
     font-size: 20px;
     width: 30px;
@@ -259,7 +259,7 @@ button .fas{
     width: 150px;
     border-radius: 5px;
     background-color: var(--primary-color);
-    color: #FFFFFF;
+    color: var(--white);
 }
 .label {
     height: 50px;
@@ -385,7 +385,7 @@ svg:nth-child(2) {
     width: fit-content;
     height: 48px;
     padding: 8px 16px 7px;
-    color: #ffffff;
+    color: var(--white);
     background-color: var(--primary-color);
     font-size: 16px;
     line-height: 24px;
@@ -445,9 +445,9 @@ svg:nth-child(2) {
     position: relative;
     top: 1px;
     font-weight: bold;
-    background: white;
+    background: var(--white);
     border: 1px solid #B7B7B7;
-    border-bottom-color: white;
+    border-bottom-color: var(--white);
     color: var(--primary-color);
     z-index: 2;
 }
@@ -458,7 +458,7 @@ svg:nth-child(2) {
     position: relative;
     border: 1px solid #B7B7B7;
     border-top: none;
-    background-color: #FFF;
+    background-color: var(--white);
     border-radius: 0 0 3px 3px;
     padding: 20px;
     min-height: 300px;
@@ -721,7 +721,7 @@ svg:nth-child(2) {
     
     line-height: 1.5;
     color: #495057;
-    background-color: #fff;
+    background-color: var(--white);
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: 4px;

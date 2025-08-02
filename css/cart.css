@@ -46,7 +46,7 @@
     align-items: center;
     padding: 24px;
     margin-bottom: 16px;
-    background-color: #fff;
+    background-color: var(--white);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -120,7 +120,7 @@
     border-radius: 30px;
     overflow: hidden;
     width: 150px;
-    background-color: #fff;
+    background-color: var(--white);
     transition: border-color 0.2s;
 }
 
@@ -144,7 +144,7 @@
 
 .quantity-btn:hover {
     background-color: var(--primary-color);
-    color: white;
+    color: var(--white);
 }
 
 .quantity-input {
@@ -204,7 +204,7 @@
 }
 
 .cart-summary {
-    background: #fff;
+    background: var(--white);
     border-radius: var(--radius);
     padding: 28px;
     margin-bottom: 24px;
@@ -264,7 +264,7 @@
     padding: 16px;
     margin-top: 24px;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: #fff;
+    color: var(--white);
     border: none;
     border-radius: 30px;
     font-size: 16px;
@@ -281,7 +281,7 @@
 
 .payment-methods {
     text-align: center;
-    background: #fff;
+    background: var(--white);
     border-radius: var(--radius);
     padding: 20px;
     box-shadow: var(--shadow);
@@ -329,7 +329,7 @@
 .empty-cart {
     text-align: center;
     padding: 60px 30px;
-    background: #fff;
+    background: var(--white);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     max-width: 600px;
@@ -347,7 +347,7 @@
     display: inline-block;
     padding: 14px 32px;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: #fff;
+    color: var(--white);
     text-decoration: none;
     border-radius: 30px;
     font-weight: 600;

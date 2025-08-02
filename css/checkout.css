@@ -40,7 +40,7 @@
 
 .progress-step.active .step-number {
     background-color: var(--primary-color);
-    color: white;
+    color: var(--white);
 }
 
 .progress-step.active .step-name {
@@ -84,7 +84,7 @@
 }
 
 .checkout-section {
-    background-color: white;
+    background-color: var(--white);
     border-radius: var(--radius);
     padding: 30px;
     margin-bottom: 30px;
@@ -203,7 +203,7 @@ input::placeholder {
 .continue-button, .complete-order {
     padding: 12px 25px;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
+    color: var(--white);
     border: none;
     border-radius: 6px;
     font-weight: 600;
@@ -328,7 +328,7 @@ input::placeholder {
 .payment-form {
     display: none;
     padding: 20px;
-    background-color: #f9fafc;
+    background-color: var(--light-gray);
     border-radius: 6px;
     margin-bottom: 20px;
 }
@@ -343,7 +343,7 @@ input::placeholder {
 }
 
 .order-summary {
-    background-color: white;
+    background-color: var(--white);
     border-radius: var(--radius);
     padding: 30px;
     box-shadow: var(--shadow);
@@ -412,7 +412,7 @@ input::placeholder {
     top: -8px;
     right: -8px;
     background-color: var(--dark-gray);
-    color: white;
+    color: var(--white);
     border-radius: 50%;
     width: 22px;
     height: 22px;
@@ -498,7 +498,7 @@ input::placeholder {
 }
 
 .checkout-trust {
-    background-color: white;
+    background-color: var(--white);
     border-radius: var(--radius);
     padding: 25px;
     box-shadow: var(--shadow);
